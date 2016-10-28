@@ -33,12 +33,19 @@ additional 281593 SNPs removed with minor allele frequencies less than
 1%. *Explain very briefly what the output files are, and point to
 PLINK docs for more details.*
 
-Next, retain genotype data only for SNPs cataloged in the dbSNP
-reference database (these are SNPs with ids starting with "rs").
+Next, retain genotype data only for variants in the dbSNP reference
+database (these are SNPs with ids starting with "rs").
 
 ```bash
 grep rs 1kg.bim | grep -v SNP 1kg.bim | cut -f 2 > markers.txt
 plink --bfile 1kg --make-bed --extract markers.txt --out 1kg_new
+mv 1kg_new.bed 1kg.bed
+mv 1kg_new.bim 1kg.bim
+mv 1kg_new.fam 1kg.fam
 ```
 
 In the end, we have genotype data at 655,388 SNPs for 2,318 samples.
+
+NEXT:
+- Remove related samples?
+- Remove samples with no population label?
