@@ -20,3 +20,4 @@ Materials:
 To do:
 * Add an episode called something like "Wrapup".
 * Install PLINK2 on midway.
+* Write a script that demonstrates plotting.
