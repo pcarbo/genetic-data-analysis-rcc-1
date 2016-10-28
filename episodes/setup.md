@@ -31,12 +31,32 @@ slightly different for you.
 module load R/3.2
 ```
   
-+ Optionally, load R Studio.
++ Optionally, load R Studio. (Rest of workshop will assume that you
+  are running R from console, but all the steps should work using R
+  Studio as well.)
 
 + Clone the git repository (note you don't need a github account to do
-  this).
+this):
+
+```bash
+mkdir -p ~/git
+cd ~/git
+git clone https://github.com/pcarbo/genetic-data-analysis-rcc-1.git
+```
 
 + Copy the data files into the data folder in the github repo.
 
+```bash
+# Add commands here.
+```
+
 + Make sure that you can generate and view graphics in R using
-  [ggplot](http://ggplot2.org).
+[ggplot](http://ggplot2.org):
+
+```bash
+cd ~/git/genetic-data-analysis-rcc-1/code
+R --no-save
+```
+
+and then in R enter `source("demo.ggplot.R")`.
+
