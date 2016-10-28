@@ -25,6 +25,11 @@ slightly different for you.
 + Request interactive session using reservation for this workshop. I
   suggest using screen in case you lose your connection.
 
+```bash
+screen -S workshop-gda1
+sinteractive --time=03:00:00 --reservation=workshop-3-nov-2016
+```
+
 + Load the required modules.
   
 ```bash
