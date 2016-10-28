@@ -1,0 +1,22 @@
+Outline for README.
+
+(1) Give outline/summary of 2-hour workshop.
+
+(2) Code of Conduct.
+
+(3) Setup + Episdes.
+
+(4) Episodes.
+
+(5) Extras.
+
+(6) License. 
+
+Materials:
+* Sticky notes in two different colours.
+* Keys for people who do not have midway accounts.
+* HDMI to Mini-Displayport adapter.
+
+To do:
+* Add an episode called something like "Wrapup".
+* Install PLINK2 on midway.
