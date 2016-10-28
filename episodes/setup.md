@@ -49,19 +49,25 @@ cd ~/git
 git clone https://github.com/pcarbo/genetic-data-analysis-rcc-1.git
 ```
 
-+ Copy the data files into the data folder in the github repo.
++ Copy the data files into the data folder in the github
+repo. *Explain how much space these files will take up. Make sure you
+have enough storage space in your home directory for these files (use
+the `quota` command to check).*
 
 ```bash
 # Add commands here.
 ```
 
 + Make sure that you can generate and view graphics in R using
-[ggplot](http://ggplot2.org):
+[ggplot](http://ggplot2.org). 
 
 ```bash
 cd ~/git/genetic-data-analysis-rcc-1/code
 R --no-save
 ```
 
-and then in R enter `source("demo.ggplot.R")`.
+and then in R enter
 
+```R
+source("demo.ggplot.R")
+```

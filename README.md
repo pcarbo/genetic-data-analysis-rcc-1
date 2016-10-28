@@ -27,6 +27,6 @@ Windows operating sytem that they have administrative privileges on.
 
 + Attempt to apply [Software Carpentry](http://software-carpentry.org) ideas.
 
-+ Some parts of this course are based on a
-  [workshop](https://github.com/Ancestry/cehg16-workshop) I gave at
-  Stanford.
++ Some of the materials contained here were adapted from a
+  [Stanford workshop](https://github.com/Ancestry/cehg16-workshop) I
+  gave in March 2016.
