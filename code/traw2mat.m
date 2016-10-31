@@ -1,4 +1,5 @@
-% TO DO: Explain here what this script does.
+% Load the genotype matrix stored in a text file, and save it in a format 
+% that is more convenient for loading into MATLAB.
 
 % SCRIPT PARAMETERS
 % -----------------
