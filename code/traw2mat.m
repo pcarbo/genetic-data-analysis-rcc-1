@@ -11,7 +11,7 @@ famfile = '/project/rcc/workshops/genetic-data-analysis-1/1kg.fam';
 genofile = '/project/rcc/workshops/genetic-data-analysis-1/1kg_chr22.traw';
 
 % Save the genotype data to this MATLAB binary file.
-outfile = '../data/1kg.mat';
+outfile = '../data/1kg_chr22.mat';
 
 % Number of genotyped samples.
 n = 2289;
@@ -37,9 +37,9 @@ marker = cell(p,1);
 X      = zeros(n,p);
 f      = fopen(genofile,'r');
 format = repmat('%s ',1,n + 6);
-fgetl(f)
+fgetl(f);
 for i = 1:p
-  fprintf('line #%6d ',i);
+  fprintf('line #%06d ',i);
   fprintf(repmat('\b',1,13));
   data      = textscan(f,format,1,'Delimiter',' ');
   marker{i} = data{2};
@@ -60,5 +60,5 @@ fclose(f);
 
 % SAVE GENOTYPE MATRIX
 % --------------------
-fprintf('Saving genotype matrix.\n');
+fprintf('Saving genotype matrix to .mat file.\n');
 save(outfile,'id','marker','X','-v7.3');
