@@ -23,7 +23,7 @@ missing genotypes is unusually high (>5%) or the frequency of the minor
 allele is less than 1%. *Explain why these filtering steps are taken.*
 
 ```bash
-load module plink/1.9beta
+module load plink/1.90
 plink --vcf 1kg.vcf.gz --make-bed --chr 1-22 --allow-extra-chr \
   --geno 0.05 --maf 0.01 --out 1kg
 ```
@@ -39,13 +39,19 @@ database (these are SNPs with ids starting with "rs").
 ```bash
 grep rs 1kg.bim | grep -v SNP 1kg.bim | cut -f 2 > markers.txt
 plink --bfile 1kg --make-bed --extract markers.txt --out 1kg_new
-mv 1kg_new.bed 1kg.bed
-mv 1kg_new.bim 1kg.bim
-mv 1kg_new.fam 1kg.fam
 ```
 
-In the end, we have genotype data at 655,388 SNPs for 2,318 samples.
+Finally, since closely related samples can have affect our subsequent
+analyses in strange ways, we remove the 29 out of the 31 genotyped
+samples that are known to be closely related based on previous work
+(see
+[here](ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/20140625_related_individuals.txt)).
 
-NEXT:
-- Remove related samples?
-- Remove samples with no population label?
+```bash
+tail -n +2 20140625_related_individuals.txt | cut -f 1 > temp.txt
+paste temp.txt temp.txt > samples.txt
+plink --bfile 1kg_new --make-bed --remove samples.txt --out 1kg_final
+```
+
+In the end, we have genotype data at 655,388 SNPs on chromosomes 1-22
+for 2,289 samples.

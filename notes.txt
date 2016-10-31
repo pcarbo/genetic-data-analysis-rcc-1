@@ -19,7 +19,10 @@ Creating the reservation:
 
 To do:
 * Add an episode called something like "Wrapup".
-* Write a script that demonstrates plotting.
-* Compile 1000 Genomes data set.
 * Run PCA on 1000 Genomes data.
 * Run admixture on 1000 Genomes with K = ?.
+
+Currently:
+* Running admixture with K=7 on spud #87.
+* Running admixture with K=11 on spud #16.
+* Computing PCs in MATLAB on ...
