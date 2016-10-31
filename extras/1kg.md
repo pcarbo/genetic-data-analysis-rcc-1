@@ -1,7 +1,7 @@
 # Background on the 1000 Genomes genotype data
 
-*Give some background here on the 1000 Genomes Project and the data
-set.*
+*Give, very briefly, some background on the 1000 Genomes Project and
+the genotype data.*
 
 These are the steps I took to generate the 1000 Genomes data set.
 

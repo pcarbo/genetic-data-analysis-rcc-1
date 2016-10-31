@@ -1,15 +1,9 @@
 Outline for README.
-
 (1) Give outline/summary of 2-hour workshop.
-
 (2) Code of Conduct.
-
 (3) Setup + Episdes.
-
 (4) Episodes.
-
 (5) Extras.
-
 (6) License. 
 
 Materials:
@@ -17,7 +11,15 @@ Materials:
 * Keys for people who do not have midway accounts.
 * HDMI to Mini-Displayport adapter.
 
+Creating the reservation:
+
+  scontrol create reservation=gda1_rcc_workshop user=-runesha \
+    starttime=2016-11-3T11:59:00 duration=5:00:00 \
+    partitionname=sandyb nodecnt=4 flags=ignore_jobs
+
 To do:
 * Add an episode called something like "Wrapup".
-* Install PLINK2 on midway.
 * Write a script that demonstrates plotting.
+* Compile 1000 Genomes data set.
+* Run PCA on 1000 Genomes data.
+* Run admixture on 1000 Genomes with K = ?.
