@@ -72,7 +72,7 @@ previous work (see
 tail -n +2 20140625_related_individuals.txt | cut -f 1 > temp.txt
 paste temp.txt temp.txt > samples.txt
 plink --bfile 1kg_pruned --make-bed --remove samples.txt --out 1kg_train
-plink --bfile 1kg_pruned --make-bed --keep samples.txt --out 1kg_test
+plink --bfile 1kg_pruned --recode --keep samples.txt --out 1kg_test
 ```
 
 In the end, we have genotype data at 156,923 SNPs on chromosomes 1-22
@@ -80,4 +80,6 @@ for 2,289 samples. We add the suffix "train" to the data file to
 indicate that is the data set we will use to learn or "train" the
 population models. We also save the 29 samples in a separate file with
 suffix "test", since we will use these 29 samples later to take a
-second look at the models we learned.
+second look at the models we learned. We have saved the remaining
+"test" samples in PLINK's text-based format so we that we can inspect
+these files by eye.

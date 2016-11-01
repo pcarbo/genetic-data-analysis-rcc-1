@@ -10,7 +10,7 @@ are 0, 1 or 2.
 
 ```bash
 module load plink/1.90
-plink --bfile 1kg --recode A-transpose spacex --out 1kg
+plink --bfile 1kg_train --recode A-transpose spacex --out 1kg_train
 ```
 
 Each line of text file `1kg.traw` stores a column of the matrix, and
