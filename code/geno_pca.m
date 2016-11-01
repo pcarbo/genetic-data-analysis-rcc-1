@@ -1,5 +1,5 @@
 % Compute the top k principal components of n x p genotype matrix X,
-% where n is the number of samples and p is the number of genetic markers
+% where n is the number of samples and p is the number of genetic markers 
 % (SNPs). 
 
 % SCRIPT PARAMETERS

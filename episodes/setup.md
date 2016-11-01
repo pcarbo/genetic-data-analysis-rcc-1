@@ -25,6 +25,8 @@ slightly different for you.
 + Request interactive session using reservation for this workshop. I
   suggest using screen in case you lose your connection.
 
+*Add note here about requesting more memory to compute PCs in MATLAB.*
+
 ```bash
 screen -S workshop-gda1
 sinteractive --time=02:45:00 --mem=4G --reservation=workshop-3-nov-2016
