@@ -1,1 +1,1 @@
-Put the data files in this folder. (See "Setup".).
+Put the data files in this folder. (See "Setup".)
