@@ -27,7 +27,7 @@ slightly different for you.
 
 ```bash
 screen -S workshop-gda1
-sinteractive --time=03:00:00 --reservation=workshop-3-nov-2016
+sinteractive --time=02:45:00 --mem=4G --reservation=workshop-3-nov-2016
 ```
 
 + Load the required modules.

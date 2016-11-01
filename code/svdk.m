@@ -34,7 +34,6 @@ function [U, D, V] = svdk(A, k, opts)
 % PARTICULAR PURPOSE.
 % $Date: 2008/12/10 18:55:02$
 
-
 if ~exist('opts','var')      opts = struct;        end
 if ~isfield(opts,'maxiter')  opts.maxiter = 2000;  end
 if ~isfield(opts,'tol')      opts.tol     = 1e-5;  end
