@@ -3,7 +3,11 @@
 *Give, very briefly, some background on the 1000 Genomes Project and
 the genotype data.*
 
-These are the steps I took to generate the 1000 Genomes data set.
+These are the steps I took to generate the 1000 Genomes data set. Note
+that all the data processing was accomplished using PLINK, or using
+UNIX command-line tools such as **cut** and **paste** so all these
+processing steps were completed very quickly despite the fact that we
+are working with very large data sets.
 
 ### Retrieving the genotype data.
 
@@ -41,17 +45,39 @@ grep rs 1kg.bim | grep -v SNP 1kg.bim | cut -f 2 > markers.txt
 plink --bfile 1kg --make-bed --extract markers.txt --out 1kg_new
 ```
 
+At this point, we have genotype data for 655,388 SNPs and 2,318
+samples. Many of the SNPs contain somewhat redundant information
+because they are in "linkage disequilibrium" with each other; that is,
+they are strongly correlated with each other due to being close to
+each other on the same chromosome, and therefore it is rare to have a
+recombination event between these two SNPs. In this next step, we
+greedily prune out a large fraction of the SNPs to improve computation
+time for subsequent analyses while retaining as much information as
+possible.
+
+```bash
+plink --bfile 1kg --indep-pairwise 1000 500 0.25
+plink --bfile 1kg --make-bed --extract plink.prune.in --out 1kg_pruned
+```
+
+After this pruning step, we are have genotype data for 156,923 SNPs.
+
 Finally, since closely related samples can have affect our subsequent
-analyses in strange ways, we remove the 29 out of the 31 genotyped
-samples that are known to be closely related based on previous work
-(see
+analyses in strange ways, for our computations we remove the 29 out of
+the 31 genotyped samples that are known to be closely related based on
+previous work (see
 [here](ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/20140625_related_individuals.txt)).
 
 ```bash
 tail -n +2 20140625_related_individuals.txt | cut -f 1 > temp.txt
 paste temp.txt temp.txt > samples.txt
-plink --bfile 1kg_new --make-bed --remove samples.txt --out 1kg_final
+plink --bfile 1kg_pruned --make-bed --remove samples.txt --out 1kg_train
+plink --bfile 1kg_pruned --make-bed --keep samples.txt --out 1kg_test
 ```
 
-In the end, we have genotype data at 655,388 SNPs on chromosomes 1-22
-for 2,289 samples.
+In the end, we have genotype data at 156,923 SNPs on chromosomes 1-22
+for 2,289 samples. We add the suffix "train" to the data file to
+indicate that is the data set we will use to learn or "train" the
+population models. We also save the 29 samples in a separate file with
+suffix "test", since we will use these 29 samples later to take a
+second look at the models we learned.
