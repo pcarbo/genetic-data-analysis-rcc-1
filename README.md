@@ -39,6 +39,13 @@ gave in March 2016.
 [John Novembre's PopGen
 workshop](https://github.com/NovembreLab/HGDP_PopStruct_Exercise).
 
+## Aims
+
+Explore numeric techniques for investigating genetic diversity and
+population structure from genotype data.
+
+*Summarize aims of workshop here.*
+
 ## Episodes
 
 *Create a table listing the episodes with their titles and the main

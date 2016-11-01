@@ -5,6 +5,22 @@ read.pcs <- function (filename)
   read.table(filename,header = TRUE,stringsAsFactors = FALSE)
 
 # TO DO: Explain what this function does.
-plotpca <- function () {
-
+plotpca <- function (panel, i, j) {
+  clrs   <- rep(c("darkorange","dodgerblue","red","navyblue","gold",
+                  "yellowgreen","darkviolet","magenta","cyan"),
+                each = 3)
+  shapes <- rep(c(1,2,4),times = 9)
+  panel        <- panel[c("id","pop",paste("PC",c(i,j),sep=""))]
+  names(panel) <- c("id","label","x","y")
+  return(ggplot(panel,aes(x,y,col = label,shape = label)) +
+         geom_point(cex = 2) +
+         scale_color_manual(values = clrs) +
+         scale_shape_manual(values = shapes) +
+         theme_minimal() +
+         theme(panel.grid.major = element_blank(),
+               panel.grid.minor = element_blank(),
+               axis.text        = element_text(size = 12),
+               legend.title     = element_text(face = "italic"),
+               axis.title       = element_text(face = "bold",size = 14)) +
+         labs(x = paste("PC",i),y = paste("PC",j)))
 }

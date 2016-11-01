@@ -16,6 +16,7 @@ In R, these are the steps to plot PCs 1 and 2:
 
 ```R
 # Load the "plotpca" function and other useful functions.
+library(ggplot2)
 source("misc.R")
 source("plotpca.R")
 
@@ -26,10 +27,17 @@ panel <- read.1kg.labels("../data/omni_samples.20141118.panel")
 pc <- read.pcs("../results/1kg_train_pcs.txt")
 
 # Merge the two tables.
-pc <- transform(merge(panel,pc),
-                id = as.character(id))
+panel <- transform(merge(panel,pc),
+                   id = as.character(id))
 
+# Optionally, create a new graphics device. (Note: this doesn't work
+# in RStudio.)
+dev.new(height = 7.5,width = 9.5)
 
+# Plot the samples according to their projection onto PCs 1 and 2; the
+# colour and shape of the samples are chosen according to the
+# expert-provided population labels.
+print(plotpca(panel,1,2))
 ```
 
-Try different combinations of PCs.
+Next, try different combinations of PCs (e.g., `print(plotpca(panel,3,4))`).

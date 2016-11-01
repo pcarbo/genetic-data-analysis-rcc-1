@@ -81,3 +81,7 @@ and then in R enter
 ```R
 source("demo.ggplot.R")
 ```
+
+If this is not working on your computer, and alternative (for midway
+cluster only) is [ThinLinc](add-url-here).
+
