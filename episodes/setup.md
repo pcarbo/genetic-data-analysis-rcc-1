@@ -55,7 +55,8 @@ have enough storage space in your home directory for these files (use
 the `quota` command to check).*
 
 ```bash
-# Add commands here.
+cd ~/git/genetic-data-analysis-rcc-1/data
+cp /project/rcc/workshops/genetic-data-analysis-1/* .
 ```
 
 + Make sure that you can generate and view graphics in R using

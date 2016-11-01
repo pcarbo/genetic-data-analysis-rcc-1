@@ -4,20 +4,20 @@
 % SCRIPT PARAMETERS
 % -----------------
 % This is a .fam file 
-famfile = '/project/rcc/workshops/genetic-data-analysis-1/1kg.fam';
+famfile = '/tmp/pcarbo/1kg.fam';
 
 % This is a .traw file storing the genotype data. For details on this
 % file format, see http://www.cog-genomics.org/plink2/formats#traw.
-genofile = '/project/rcc/workshops/genetic-data-analysis-1/1kg_chr22.traw';
+genofile = '/tmp/pcarbo/1kg.traw';
 
 % Save the genotype data to this MATLAB binary file.
-outfile = '../data/1kg_chr22.mat';
+outfile = '/tmp/pcarbo/1kg.mat';
 
 % Number of genotyped samples.
 n = 2289;
 
 % Number of genotyped SNPs.
-p = 9559;
+p = 655388;
 
 % READ SAMPLE INFORMATION
 % -----------------------
