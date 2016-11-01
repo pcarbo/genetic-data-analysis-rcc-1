@@ -1,5 +1,9 @@
 # Analysis of Genetic Data, Part 1
 
++ Give time and location here. Also add
+ [link](http://training.uchicago.edu/course_detail.cfm?course_id=1714)
+ to training@uchicago webpage.*
+
 **Level:** Intermediate
 
 **Description:** In this 2-hour workshop, participants will apply
@@ -21,11 +25,8 @@ compute cluster, although experience using the RCC cluster is not
 required. All participants must bring a laptop with a Mac, Linux, or
 Windows operating sytem that they have administrative privileges on.
 
-Please see the [Code of Conduct]()
-
-+ Give time and location here. Also add
- [link](http://training.uchicago.edu/course_detail.cfm?course_id=1714)
- to training@uchicago webpage.*
+Please see the [License](LICENSE) and the
+[Code of Conduct](conduct.md).
 
 + Attempt to apply elements of the
   [Software Carpentry](http://software-carpentry.org/lessons) approach.
@@ -33,3 +34,7 @@ Please see the [Code of Conduct]()
 + Some of the materials contained here were adapted from a
   [Stanford workshop](https://github.com/Ancestry/cehg16-workshop) I
   gave in March 2016.
+
+# Episodes
+
+*List of episodes goes here.*
