@@ -42,7 +42,7 @@ for i = 1:p
   fprintf('line #%06d ',i);
   fprintf(repmat('\b',1,13));
   data      = textscan(f,format,1,'Delimiter',' ');
-  marker{i} = data{2};
+  marker(i) = data{2};
   data      = [data{6 + (1:n)}];
 
   % Populate the genotype data for the ith marker.
