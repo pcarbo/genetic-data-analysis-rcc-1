@@ -56,7 +56,14 @@ the `quota` command to check).*
 
 ```bash
 cd ~/git/genetic-data-analysis-rcc-1/data
-cp /project/rcc/workshops/genetic-data-analysis-1/* .
+cp /project/rcc/workshops/genetic-data-analysis-1/data/* .
+```
+
++ Copy the results files into the results folder in the github repo.
+
+```bash
+cd ~/git/genetic-data-analysis-rcc-1/results
+cp /project/rcc/workshops/genetic-data-analysis-1/results/* .
 ```
 
 + Make sure that you can generate and view graphics in R using

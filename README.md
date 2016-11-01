@@ -29,12 +29,18 @@ Please see the [License](LICENSE) and the
 [Code of Conduct](conduct.md).
 
 + Attempt to apply elements of the
-  [Software Carpentry](http://software-carpentry.org/lessons) approach.
+[Software Carpentry](http://software-carpentry.org/lessons) approach.
 
 + Some of the materials contained here were adapted from a
-  [Stanford workshop](https://github.com/Ancestry/cehg16-workshop) I
-  gave in March 2016.
+[Stanford workshop](https://github.com/Ancestry/cehg16-workshop) I
+gave in March 2016.
+
++ For more in-depth exploration of these techniques, see
+[John Novembre's PopGen
+workshop](https://github.com/NovembreLab/HGDP_PopStruct_Exercise).
 
 ## Episodes
 
-*List of episodes goes here.*
+*Create a table listing the episodes with their titles and the main
+questions that will be explored, similar to the schedule
+[here](http://swcarpentry.github.io/r-novice-inflammation).*
