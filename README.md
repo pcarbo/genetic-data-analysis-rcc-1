@@ -35,6 +35,6 @@ Please see the [License](LICENSE) and the
   [Stanford workshop](https://github.com/Ancestry/cehg16-workshop) I
   gave in March 2016.
 
-# Episodes
+## Episodes
 
 *List of episodes goes here.*
