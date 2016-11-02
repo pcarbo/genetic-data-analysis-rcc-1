@@ -11,6 +11,7 @@ Materials:
 * Keys for people who do not have midway accounts.
 * HDMI to Mini-Displayport adapter.
 * Digital camera.
+* Print-outs of Markdown files.
 
 Creating the reservation:
 
@@ -20,8 +21,6 @@ Creating the reservation:
 
 To do:
 * Add an episode called something like "Wrapup".
-* Run PCA on 1000 Genomes data.
-* Run admixture on 1000 Genomes with K = ?.
 
 Currently:
 * Running admixture with K=7 on spud #87.

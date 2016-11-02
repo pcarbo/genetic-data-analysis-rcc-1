@@ -37,13 +37,13 @@ Windows operating sytem that they have administrative privileges on.*
 the
 [Software Carpentry approach](http://software-carpentry.org/lessons)
 (see also
-[this article](http://dx.doi.org/10.12688/f1000research.3-62.v2))
-to interactive instruction in the computing/quantitative
-sciences. Some of the materials contained within are adapted from a
+[this article](http://dx.doi.org/10.12688/f1000research.3-62.v2)) to
+interactive instruction for computing/quantitative sciences. Some of
+the materials contained within are adapted from a
 [Stanford workshop](https://github.com/Ancestry/cehg16-workshop) given
 in March 2016. For a more in-depth exploration of the concepts and
-techniques introduced, see
-[John Novembre's PopGen workshop](https://github.com/NovembreLab/HGDP_PopStruct_Exercise).
+techniques introduced, see [John Novembre's](http://jnpopgen.org)
+[PopGen workshop](https://github.com/NovembreLab/HGDP_PopStruct_Exercise).
 
 Please also take a look at the [Code of Conduct](conduct.md), and the
 [Software License](LICENSE) which applies to all the scripts and code
@@ -54,11 +54,18 @@ Attribution license
 
 ## Aims
 
-+ Explore the application of numeric techniques for investigating
+1. Explore the application of numeric techniques for investigating
 genetic diversity and population structure from large-scale genotype
 data.
 
-*Summarize aims of workshop here.*
+2. Understand how large-scale genetic data is commonly represented in
+computer files.
+
+3. Use command-line tools to manipulate genetic data, and use R to
+summarize and visualize the results of a genetic data analysis.
+
+4. Practice using the RCC shell environment (*midway*) for large-scale
+computation.
 
 ## Episodes
 
