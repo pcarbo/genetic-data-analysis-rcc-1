@@ -7,7 +7,7 @@ November 2, 2016<br>
 
 Register [here](http://training.uchicago.edu/course_detail.cfm?course_id=171).
 
-### General Information
+## General Information
 
 In this 2-hour workshop, participants will apply simple approaches to
 investigate and visualize large-scale genetic data sets, with an
@@ -52,7 +52,7 @@ this repository is made available under the Creative Commons
 Attribution license
 ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0)).
 
-### Aims
+## Aims
 
 1. Explore the application of numeric techniques for investigating
 genetic diversity and population structure from large-scale genotype
@@ -67,12 +67,12 @@ summarize and visualize the results of a genetic data analysis.
 4. Practice using the RCC shell environment (*midway*) for large-scale
 computation.
 
-### Episodes
+## Episodes
 
 *Create a table listing the episodes with their titles and the main
 questions that will be explored, similar to the schedule
 [here](http://swcarpentry.github.io/r-novice-inflammation).*
 
-### Extras
+## Extras
 
 *Extras go here.*
