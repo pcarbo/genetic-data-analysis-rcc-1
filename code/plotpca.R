@@ -5,11 +5,15 @@ read.pcs <- function (filename)
   read.table(filename,header = TRUE,stringsAsFactors = FALSE)
 
 # TO DO: Explain what this function does.
-plotpca <- function (panel, i, j) {
+plotpca <- function (panel, i = 1, j = 2) {
+
+  # These vectors specify the colours and shapes used to plot the
+  # samples on the PC axes.
   clrs   <- rep(c("darkorange","dodgerblue","red","navyblue","gold",
                   "yellowgreen","darkviolet","magenta","cyan"),
                 each = 3)
   shapes <- rep(c(1,2,4),times = 9)
+  
   panel        <- panel[c("id","pop",paste("PC",c(i,j),sep=""))]
   names(panel) <- c("id","label","x","y")
   return(ggplot(panel,aes(x,y,col = label,shape = label)) +
