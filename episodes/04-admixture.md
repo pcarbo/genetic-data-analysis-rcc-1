@@ -1,4 +1,4 @@
-# Analysis of Genetic Data 1: Exploring genetic data structure using ADMIXTURE
+# Analysis of Genetic Data 1:<br>Exploring genetic data structure using ADMIXTURE
 
 *Brief introduction to ADMIXTURE goes here.*
 

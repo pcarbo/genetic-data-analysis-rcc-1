@@ -1,4 +1,4 @@
-# Analysis of Genetic Data 1: Projecting a new sample onto previously computed PCs
+# Analysis of Genetic Data 1:<br>Making predictions using PCA
 
 Here we further explore principal components by computing the
 "projection" of a new set of genotype samples (a "test set") onto the

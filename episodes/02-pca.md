@@ -76,6 +76,75 @@ genotype? How much more efficient is this representation compared to
 
 ### Computing PCs from genetic data using MATLAB
 
+PCA is an important numerical technique for data analysis in many
+scientific fields, and it would be impossible to provide a proper
+justification for PCA within this workshop, let alone explain its
+importance to genetics. One way to view PCA is as a dimensionality
+reduction technique for embedding multi-dimensional data in a small
+number of dimensions (e.g., for plotting in 2 dimensions). Here we
+will gain some intuition for PCA applied to genetic data *by
+example*. 
+
+Several software tools have been developed for efficient computing
+principal components (PCs) from large genetic data sets, such as
+[EIGENSOFT](https://www.hsph.harvard.edu/alkes-price/software). Instead
+of using a specialized tool, here we use MATLAB to underscore that PCA
+is easily computed using standard numerical computation techniques; in
+particular, PCA is studied as the singular value decomposition (SVD),
+so we will use a
+[fast MATLAB implementation of the Lanczos algorithm developed by Jie Chen at IBM](https://jie-chen-ibm.appspot.com/software.html),
+called [svdk](../code/svdk.m), to compute the the first *k* singular
+values of the genotype matrix and their associated singular
+vectors. 
+
+In linear algebra, PCA is studied as the singular
+value decomposition.
+
+very
+
+and
+it would be most impossible to summarize 
+
+Next, save this text file in a binary format that is convenient for
+loading into MATLAB.
+
+```bash
+module load matlab/2016a
+cd ~/git/genetic-data-analysis-rcc-1/code
+matlab -nosplash -nodesktop
+```
+
+And in the MATLAB console type the following:
+
+```MATLAB
+traw2mat
+```
+
+Now that we have the genotype data in a convenient format for MATLAB,
+we can perform the computation. This is accomplished using the MATLAB
+[geno_pca.m](../code/geno_pca.m) script. In MATLAB, simply enter:
+
+```MATLAB
+geno_pca
+```
+
+The output from this script should look something like this:
+
+```
+(1) Loading genotype matrix from .mat file.
+Loaded a 2289 x 156923 matrix.
+(2) Centering columns of genotype matrix.
+(3) Calculating first 10 PCs.
+Computation took 1.41 minutes.
+(4) Saving rotation matrix to text file.
+(5) Projecting samples onto the principal components.
+(6) Saving PCs to text file.
+(7) Saving mean genotypes to text file.
+```
+
+*Describe here the two files that were created.*
+
+
 ### Visualizing PCs using R
 
 Convert .bed file to .ped file and inspect the .ped file. How can we
