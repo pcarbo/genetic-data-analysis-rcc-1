@@ -53,6 +53,9 @@ cd ~/git
 git clone https://github.com/pcarbo/genetic-data-analysis-rcc-1.git gda1
 ```
 
+If you have a github account, please bookmark this repository by
+clicking the "Star" button.
+
 + Copy the data files into the data folder in the github
 repo. *Explain how much space these files will take up. Make sure you
 have enough storage space in your home directory for these files (use

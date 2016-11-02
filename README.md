@@ -3,7 +3,8 @@
 November 2, 2016<br>
 2:00 pm - 4:00 pm<br>
 **Instructor:** Peter Carbonetto<br>
-**Helpers:** TBD<br>
+**Helpers:** Will Graybeal
+
 Register [here](http://training.uchicago.edu/course_detail.cfm?course_id=171).
 
 ### General Information
@@ -33,22 +34,29 @@ Windows operating sytem that they have administrative privileges on.*
   Chicago ([OpenStreetMap](https://www.openstreetmap.org/search?query=john%20crerar%20library#map=18/41.79053/-87.60282)).
 
 **Additional info:** This workshop is an attempt to apply elements of
-the [Software Carpentry](http://software-carpentry.org/lessons) (see
-also [here](http://dx.doi.org/10.12688/f1000research.3-62.v2))
-approach to interactive instruction in the computing/quantitative
+the
+[Software Carpentry approach](http://software-carpentry.org/lessons)
+(see also
+[this article](http://dx.doi.org/10.12688/f1000research.3-62.v2))
+to interactive instruction in the computing/quantitative
 sciences. Some of the materials contained within are adapted from a
 [Stanford workshop](https://github.com/Ancestry/cehg16-workshop) given
 in March 2016. For a more in-depth exploration of the concepts and
 techniques introduced, see
 [John Novembre's PopGen workshop](https://github.com/NovembreLab/HGDP_PopStruct_Exercise).
 
-Please also take a look at the [License](LICENSE) and the
-[Code of Conduct](conduct.md).
+Please also take a look at the [Code of Conduct](conduct.md), and the
+[Software License](LICENSE) which applies to all the scripts and code
+examples in this repository. All instructional material contained in
+this repository is made available under the Creative Commons
+Attribution license
+([CC BY 4.0](https://creativecommons.org/licenses/by/4.0)).
 
 ## Aims
 
-Explore numeric techniques for investigating genetic diversity and
-population structure from genotype data.
++ Explore the application of numeric techniques for investigating
+genetic diversity and population structure from large-scale genotype
+data.
 
 *Summarize aims of workshop here.*
 
