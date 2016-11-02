@@ -38,7 +38,7 @@ sinteractive --time=02:45:00 --mem=4G --reservation=workshop-3-nov-2016
 *If you have volunteered to generate the PCA results, you will need to
 request 8 GB of memory instead of 4 GB.*
 
-Load the required modules.
+Load the modules necessary to complete the exercises.
   
 ```bash
 module load R/3.2
@@ -46,11 +46,11 @@ module load plink/1.90
 module load admixture
 ```
   
-*Optionally*, load [R Studio](https://rstudio.rcc.uchicago.edu) in
+*Optionally*, load [RStudio](https://rstudio.rcc.uchicago.edu) in
 your browser. The rest of workshop will assume that you are running R
-from the shell, but all the steps should work using R Studio as well.
+from the shell, but all the steps should work in RStudio as well.
 
-+ Clone this repository. (Note you don't need a github account to do
+Clone this repository. (Note you don't need a github account to do
 this.)
 
 ```bash
@@ -59,27 +59,33 @@ cd ~/git
 git clone https://github.com/pcarbo/genetic-data-analysis-rcc-1.git gda1
 ```
 
-If you have a github account, please bookmark this repository by
-clicking the "Star" button.
+After completing this step, you should have a bunch of new files and
+folders in `~/git/gda1`.
 
-+ Copy the data files into the data folder in the github
-repo. *Explain how much space these files will take up. Make sure you
-have enough storage space in your home directory for these files (use
-the `quota` command to check).*
+If you have a github account, please log in to your account and
+bookmark this repository by clicking the "Star" button at the
+top-right corner of this webpage.
+
+Copy the data files into the "data" folder in the repository. The
+data files take about 350 MB of storage, so make sure you have enough
+space in your home directory for these files. (Run the `quota` command
+to check.)
 
 ```bash
 cd ~/git/gda1/data
 cp /project/rcc/workshops/genetic-data-analysis-1/data/* .
 ```
 
-+ Copy the results files into the results folder in the github repo.
+Running ADMIXTURE (Episode 4) may take longer than 2 hours to
+complete, so we have pre-generated the ADMIXTURE results. Copy these
+results files into the results folder in the github repo.
 
 ```bash
-cd ~/git/genetic-data-analysis-rcc-1/results
+cd ~/git/gda1/results
 cp /project/rcc/workshops/genetic-data-analysis-1/results/* .
 ```
 
-+ Make sure that you can generate and view graphics in R using
+Make sure that you can generate and view graphics in R using
 [ggplot](http://ggplot2.org). 
 
 ```bash
