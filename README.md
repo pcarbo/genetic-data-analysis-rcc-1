@@ -71,10 +71,10 @@ computation.
 
 | Episode | Concepts |
 | --- | --- |
-| [Setup](episodes/01-setup.md) | How do I set up my shell environment on *midway* for an analysis of genetic data? |
-| [Principal component analysis of genetic data](episodes/02-pca.md) | *Add concept 1 here.*<br>*Add concept 2 here.* |
-| [Making predictions using PCA](episodes/03-pca-project.md) | *Add concept 1 here.*<br>*Add concept 2 here.* |
-| [ADMIXTURE analysis of genetic data](episodes/04-admixture.md) | *Add concept 1 here.*<br>*Add concept 2 here.* |
+| 1. [Setup](episodes/01-setup.md) | How do I set up my shell environment on *midway* for an analysis of genetic data? |
+| 2. [Principal component analysis of genetic data](episodes/02-pca.md) | *Add concept 1 here.*<br>*Add concept 2 here.* |
+| 3. [Making predictions using PCA](episodes/03-pca-project.md) | *Add concept 1 here.*<br>*Add concept 2 here.* |
+| 4. [ADMIXTURE analysis of genetic data](episodes/04-admixture.md) | *Add concept 1 here.*<br>*Add concept 2 here.* |
 
 ## Extras
 

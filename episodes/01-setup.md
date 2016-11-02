@@ -7,8 +7,8 @@ access. If you plan to use a different computing resource (e.g.,
 another compute cluster, your own laptop), the exact steps described
 here, and in subsequent episodes, will be slightly different for you.
 
-We will use
-[pair programming](http://dx.doi.org/10.1145/2492007.2492020) in this
+We will employ
+[Pair Programming](http://dx.doi.org/10.1145/2492007.2492020) in this
 workshop. Introduce yourself to your partner and decide between you
 who will be the **driver** and who will be the **observer/navigator**.
 (Of course, you may alternate these roles throughout the workshop.)
@@ -66,19 +66,20 @@ If you have a github account, please log in to your account and
 bookmark this repository by clicking the "Star" button at the
 top-right corner of this webpage.
 
-Copy the data files into the "data" folder in the repository. The
-data files take about 350 MB of storage, so make sure you have enough
-space in your home directory for these files. (Run the `quota` command
-to check.)
+Copy the data files into the "data" folder in the repository. The data
+files take about 350 MB of space, so make sure you have enough space
+left over in your home directory for these files. (Run the `quota`
+command to check.)
 
 ```bash
 cd ~/git/gda1/data
 cp /project/rcc/workshops/genetic-data-analysis-1/data/* .
 ```
 
-Running ADMIXTURE (Episode 4) may take longer than 2 hours to
-complete, so we have pre-generated the ADMIXTURE results. Copy these
-results files into the results folder in the github repo.
+Running ADMIXTURE ([Episode 4](04-admixture.md)) may take longer than
+2 hours to complete, so we have pre-generated the ADMIXTURE
+results. Copy these results files into the results folder in the
+github repo.
 
 ```bash
 cd ~/git/gda1/results
@@ -86,7 +87,7 @@ cp /project/rcc/workshops/genetic-data-analysis-1/results/* .
 ```
 
 Make sure that you can generate and view graphics in R using
-[ggplot](http://ggplot2.org). 
+[ggplot2](http://ggplot2.org). 
 
 ```bash
 cd ~/git/genetic-data-analysis-rcc-1/code

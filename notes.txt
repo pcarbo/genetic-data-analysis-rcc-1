@@ -5,6 +5,7 @@ Materials:
 * Sticky notes in two different colours.
 * Keys for people who do not have midway accounts.
 * HDMI to Mini-Displayport adapter.
+* VGA to Mini-Displayport adapter.
 * Digital camera.
 * Print-outs of Markdown files.
 
@@ -14,7 +15,4 @@ Creating the reservation:
     starttime=2016-11-3T11:59:00 duration=5:00:00 \
     partitionname=sandyb nodecnt=4 flags=ignore_jobs
 
-Currently:
-* Running admixture with K=7 on spud #87.
-* Running admixture with K=11 on spud #16.
-* Computing PCs in MATLAB on ...
+
