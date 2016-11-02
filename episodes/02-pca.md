@@ -5,11 +5,11 @@ observe how genetic polymorphism data---specifically genotype samples
 from human subjects---are commonly stored in computer files. We will
 also see how these data can be represented as a **matrix**.
 
-In the **second part**, we will explore **principal component analysis**
-(PCA), a widely used statistical technique for exposing hidden
-patterns of variation from genetic data. In these exercises, we will
-discover that these hidden patterns have a close connection to human
-history and geography.
+In the **second part**, we will explore **principal component
+analysis** (PCA), a widely used statistical technique for exposing
+hidden patterns, or "structure", in genetic data. In these exercises,
+we will discover that much of the structure uncovered by PCA can be
+connected to human history and geography.
 
 For these explorations, we will use genotype data from Phase 3 of the
 [1000 Genomes Project](http://dx.doi.org/10.1038/nature15393), an
@@ -33,22 +33,46 @@ cd ~/git/gda1/data
 less -S 1kg_test.ped
 ```
 
-The program `less` is well suited for viewing very large text files
-because the file can be viewed without having to read the entire
-file. You can scroll up-down and left-right using the arrows.
+The program `less` with the `-S` flag is well suited for viewing very
+large text files because the file can be viewed without having to read
+the entire file. You can scroll up-down and left-right using the
+arrow keys on your keyboard.
 
 A line of this file stores the genotype data for a single sample; each
-a pair of letters (after the first 6 columns) specifies the genotype
-at a given SNP (a nucleotide on each chromosome copy). Some entries
-are "0", meaning that the genotype is unavailable.
+a pair of letters after the first 6 columns specifies the genotype at
+a given SNP (a nucleotide on each chromosome copy). Some genotype
+entries are "0 0", meaning that the genotype is unavailable.
 
 This file is over 18 MB in size just to store the genotypes for 29
-samples. Why is this text file an inefficient way to store genotype
+samples. Why is this text format an inefficient way to store genotype
 data? How could you store the data more efficiently?
 
 ### Representing genetic data as a matrix
 
-How to 
+In order to apply numerical analyses to the genotype data, we need to
+be able to represent these data in a numerical form. Here we will use
+PLINK to convert the genotype data for test samples into a matrix.
+
+First we need to convert the genotype data (stored in a PLINK file) to
+a p x n matrix, where p is the number of genetic markers (SNPs) and n
+is the number of samples. 
+
+```bash
+module load plink/1.90
+plink --file 1kg_test --recode A-transpose spacex --out 1kg_test
+less -S 1kg_test
+```
+
+Each line of the `1kg.traw' text file, after the header line, stores a
+row of the p x n matrix, and each (space-delimited) column of the text
+file, after the first 6 columns, stores a column of the p x n
+matrix. Observe that all the matrix entries are either 0, 1 or 2 (or
+'NA' for "not available", or missing). Therefore, we now have a fully
+numeric representation of the genotype data.
+
+Why is a single number (0, 1 or 2) sufficient to represent the
+genotype? How much more efficient is this representation compared to
+`1kg_test.ped`?
 
 ### Computing PCs from genetic data using MATLAB
 
