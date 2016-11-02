@@ -57,4 +57,15 @@ dev.new(height = 4,width = 8)
 print(plotadmix(admix,k = 1))
 ```
 
+Next, try different ancestral populations (k=2, *etc.*).
+
 *Optional:* Revisit the admnixture results with K=7 populations.
+
+*If I have time, explain how we can predict admixture proportions in
+ unseen samples using the -P option in admixture.* This will give the
+ users some opportunity to run admixture.
+
+```bash
+cd ~/git/
+admixture ...
+```

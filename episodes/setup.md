@@ -36,6 +36,8 @@ sinteractive --time=02:45:00 --mem=4G --reservation=workshop-3-nov-2016
   
 ```bash
 module load R/3.2
+module load plink/1.90
+module load admixture
 ```
   
 + Optionally, load R Studio. (Rest of workshop will assume that you
@@ -48,7 +50,7 @@ this):
 ```bash
 mkdir -p ~/git
 cd ~/git
-git clone https://github.com/pcarbo/genetic-data-analysis-rcc-1.git
+git clone https://github.com/pcarbo/genetic-data-analysis-rcc-1.git gda1
 ```
 
 + Copy the data files into the data folder in the github
