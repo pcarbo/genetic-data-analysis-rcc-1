@@ -1,4 +1,4 @@
-# Analysis of Genetic Data 1: Exploring structure of genetic data using PCA
+# Analysis of Genetic Data 1:<br>Exploring structure of genetic data using PCA
 
 This episode is divided into two parts. In the **first part**, we will
 observe how genetic polymorphism data---specifically genotype samples
