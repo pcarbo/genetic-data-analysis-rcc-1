@@ -7,11 +7,10 @@ plotpca <- function (dat, i = 1, j = 2, dat.more = NULL) {
                   "yellowgreen","darkviolet","magenta","cyan"),
                 each = 3)
   shapes <- rep(c(1,2,4),times = 9)
-  
-  dat        <- dat[c("id","pop",paste("PC",c(i,j),sep=""))]
-  names(dat) <- c("id","label","x","y")
 
   # TO DO: Add comments here.
+  dat        <- dat[c("id","pop",paste("PC",c(i,j),sep=""))]
+  names(dat) <- c("id","label","x","y")
   out <- ggplot(dat,aes(x,y,col = label,shape = label)) +
            geom_point(cex = 1.5) +
            scale_color_manual(values = clrs) +

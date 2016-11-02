@@ -51,9 +51,10 @@ admix <- transform(merge(panel,admix),
 
 # Optionally, create a new graphics device. (Note: this doesn't work
 # in RStudio.)
-dev.new(height = 6,width = 8)
+dev.new(height = 4,width = 8)
 
-
+# TO DO: Add comments here.
+print(plotadmix(admix,k = 1))
 ```
 
 *Optional:* Revisit the admnixture results with K=7 populations.
