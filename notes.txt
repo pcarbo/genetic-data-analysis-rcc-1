@@ -1,10 +1,5 @@
-Outline for README.
-(1) Give outline/summary of 2-hour workshop.
-(2) Code of Conduct.
-(3) Setup + Episdes.
-(4) Episodes.
-(5) Extras.
-(6) License. 
+Notes:
+* Add exit slip to Google doc.
 
 Materials:
 * Sticky notes in two different colours.
@@ -18,9 +13,6 @@ Creating the reservation:
   scontrol create reservation=gda1_rcc_workshop user=-runesha \
     starttime=2016-11-3T11:59:00 duration=5:00:00 \
     partitionname=sandyb nodecnt=4 flags=ignore_jobs
-
-To do:
-* Add an episode called something like "Wrapup".
 
 Currently:
 * Running admixture with K=7 on spud #87.
