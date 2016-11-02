@@ -23,19 +23,22 @@ Log on to midway using ssh with X forwarding:
 
 ```bash
 ssh -X username@midway.rcc.uchicago.edu
+
 ```
 
-+ Request interactive session using reservation for this workshop. I
-  suggest using screen in case you lose your connection.
-
-*Add note here about requesting more memory to compute PCs in MATLAB.*
+Request an **interactive session** using the reservation for this
+workshop. To safeguard against losing your connection, I recommend
+using **screen**, but this is optional.
 
 ```bash
 screen -S workshop-gda1
 sinteractive --time=02:45:00 --mem=4G --reservation=workshop-3-nov-2016
 ```
 
-+ Load the required modules.
+*If you have volunteered to generate the PCA results, you will need to
+request 8 GB of memory instead of 4 GB.*
+
+Load the required modules.
   
 ```bash
 module load R/3.2
@@ -43,12 +46,12 @@ module load plink/1.90
 module load admixture
 ```
   
-+ Optionally, load R Studio. (Rest of workshop will assume that you
-  are running R from console, but all the steps should work using R
-  Studio as well.)
+*Optionally*, load [R Studio](https://rstudio.rcc.uchicago.edu) in
+your browser. The rest of workshop will assume that you are running R
+from the shell, but all the steps should work using R Studio as well.
 
-+ Clone the git repository (note you don't need a github account to do
-this):
++ Clone this repository. (Note you don't need a github account to do
+this.)
 
 ```bash
 mkdir -p ~/git
