@@ -1,30 +1,36 @@
 # Background on the 1000 Genomes genotype data
 
-*Give, very briefly, some background on the 1000 Genomes Project and
-the genotype data.*
+These are the steps I took to prepare the 1000 Genomes data for this
+workshop. If you do not have access to the data on *miway*, you should
+be able to regenerate the data set yourself by following these
+steps. (Note the exact steps may be slightly different depending on
+your computing setup.)
 
-These are the steps I took to generate the 1000 Genomes data set. Note
-that all the data processing was accomplished using PLINK, or using
-UNIX command-line tools such as **cut** and **paste** so all these
-processing steps were completed very quickly despite the fact that we
-are working with very large data sets.
+Since all the data preparation was done using PLINK and UNIX shell
+commands, all these steps were completed very quickly despite the fact
+that we are working with large amounts of data (hundreds of thousands
+of SNPs and thousands of samples).
 
-### Retrieving the genotype data.
+### Retrieving the genotype data
 
-Download OmniExpress genotype data. This file contains genotypes for
-2,401,408 SNPs and 2,318 samples.
+First, download the 1000 Genomes OmniExpress genotype data. This file
+contains genotypes for 2,401,408 single nucleotide polymorphisms
+(SNPs) and 2,318 samples.
 
 ```bash
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/supporting/hd_genotype_chip/ALL.chip.omni_broad_sanger_combined.20140818.snps.genotypes.vcf.gz
 mv ALL.chip.omni_broad_sanger_combined.20140818.snps.genotypes.vcf.gz 1kg.vcf.gz
 ```
 
-Convert from [VCF](http://www.cog-genomics.org/plink2/formats#vcf) to
+Next, convert the from
+[VCF](http://www.cog-genomics.org/plink2/formats#vcf) to
 [binary PLINK](http://www.cog-genomics.org/plink2/input)
 (`.bed/.bim/.bam`) format, retaining only SNPs on autosomal
-chromosomes 1-22. I also remove any SNPs in which the proportion of
-missing genotypes is unusually high (>5%) or the frequency of the minor
-allele is less than 1%. *Explain why these filtering steps are taken.*
+chromosomes 1-22. Also, remove any SNPs in which the proportion of
+missing genotypes is unusually high (>5%), or in which the frequency
+of the minor allele is less than 1%. These steps are taken to simplify
+the analyses of these data, perhaps at the expense of removing some
+genetic data that might expose more subtle patterns.
 
 ```bash
 module load plink/1.90
@@ -32,13 +38,14 @@ plink --vcf 1kg.vcf.gz --make-bed --chr 1-22 --allow-extra-chr \
   --geno 0.05 --maf 0.01 --out 1kg
 ```
 
-This step removed 315,046 SNPs with too many missing genotypes, and an
-additional 281593 SNPs removed with minor allele frequencies less than
-1%. *Explain very briefly what the output files are, and point to
-PLINK docs for more details.*
+This command removes 315,046 SNPs with too many missing genotypes, and
+an additional 281,593 SNPs with minor allele frequencies less than
+1%. 
 
-Next, retain genotype data only for variants in the dbSNP reference
-database (these are SNPs with ids starting with "rs").
+Next, retain genotype data only for the variants in the dbSNP
+reference database (these are SNPs with ids starting with "rs"). This
+step is only taken to make the size of the data set more manageable
+for our statistical analyses.
 
 ```bash
 grep rs 1kg.bim | grep -v SNP 1kg.bim | cut -f 2 > markers.txt
@@ -56,8 +63,8 @@ time for subsequent analyses while retaining as much information as
 possible.
 
 ```bash
-plink --bfile 1kg --indep-pairwise 1000 500 0.25
-plink --bfile 1kg --make-bed --extract plink.prune.in --out 1kg_pruned
+plink --bfile 1kg_new --indep-pairwise 1000 500 0.25
+plink --bfile 1kg_new --make-bed --extract plink.prune.in --out 1kg_pruned
 ```
 
 After this pruning step, we are have genotype data for 156,923 SNPs.
