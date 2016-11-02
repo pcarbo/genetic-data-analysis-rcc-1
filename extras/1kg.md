@@ -69,11 +69,12 @@ plink --bfile 1kg_new --make-bed --extract plink.prune.in --out 1kg_pruned
 
 After this pruning step, we are left with genotypes for 156,923 SNPs.
 
-Finally, since closely related samples can have affect our subsequent
-analyses in strange ways, for our computations we remove the 29 out of
-the 31 genotyped samples that are known to be closely related based on
-previous work (see
-[here](ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/20140625_related_individuals.txt)).
+Finally, since typical analyses of genetic data assume that none of
+the samples are closely related, having closely related samples in the
+data set can sometimes affect the results in unexpected
+ways. Therefore, for our computations we remove the 29 out of the 31
+genotyped samples that are known to be closely related
+(see [this table](ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/20140625_related_individuals.txt)).
 
 ```bash
 tail -n +2 20140625_related_individuals.txt | cut -f 1 > temp.txt
@@ -83,10 +84,13 @@ plink --bfile 1kg_pruned --recode --keep samples.txt --out 1kg_test
 ```
 
 In the end, we have genotype data at 156,923 SNPs on chromosomes 1-22
-for 2,289 samples. We add the suffix "train" to the data file to
-indicate that is the data set we will use to learn or "train" the
-population models. We also save the 29 samples in a separate file with
-suffix "test", since we will use these 29 samples later to take a
-second look at the models we learned. We have saved the remaining
-"test" samples in PLINK's text-based format so we that we can inspect
-these files by eye.
+for 2,289 samples.
+
+We added the suffix "train" to the data file to indicate that is the
+data set we will use to learn, or "train", the population models. We
+also save the 29 samples in a separate file with suffix "test". These
+29 samples will later be used to test the models we learned by making
+predictions with them. Note that the remaining 29 "test" samples in
+are stored in PLINK's text-based format that has the advantage that it
+is human readable.
+

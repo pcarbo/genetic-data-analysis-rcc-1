@@ -14,6 +14,8 @@ research. These data have been made available to the public
 for the steps taken to retrieve and prepare the 1000 Genomes data for
 this workshop.
 
+Meaning of population labels: https://catalog.coriell.org/1/NHGRI/About/Guidelines-for-Referring-to-Populations
+
 Convert .bed file to .ped file and inspect the .ped file. How can we
 represent this as a matrix?
 
