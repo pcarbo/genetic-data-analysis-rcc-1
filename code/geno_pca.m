@@ -16,6 +16,9 @@ rotfile = '../results/1kg_train_rot.txt';
 % Save the PCs to this text file.
 pcfile = '../results/1kg_train_pcs.txt';
 
+% Save the mean genotypes to this text file.
+meanfile = '../results/1kg_train_mean.txt';
+
 % LOAD GENOTYPE MATRIX
 % --------------------
 fprintf('(1) Loading genotype matrix from .mat file.\n');
@@ -28,8 +31,10 @@ fprintf('Loaded a %d x %d matrix.\n',n,p);
 % Center the columns of the genotype matrix so that each column has a
 % mean of zero.
 fprintf('(2) Centering columns of genotype matrix.\n');
+y = zeros(p,1);
 for i = 1:p
-  X(:,i) = X(:,i) - mean(X(:,i));
+  y(i)   = mean(X(:,i));
+  X(:,i) = X(:,i) - y(i);
 end
 
 % COMPUTE PCs USING SVDK
@@ -57,3 +62,10 @@ pc = X * R;
 % are easily loaded into R.
 fprintf('(6) Saving PCs to text file.\n');
 write_pc_matrix(pc,id,pcfile);
+
+% SAVE MEAN GENOTYPES TO TEXT FILE
+% --------------------------------
+% It is also important that we save the mean genotypes since they will be
+% useful later on.
+fprintf('(7) Saving mean genotypes to text file.\n');
+write_mean_genotypes(y,marker,meanfile);

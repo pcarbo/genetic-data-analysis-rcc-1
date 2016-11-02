@@ -51,6 +51,7 @@ Computation took 1.41 minutes.
 (4) Saving rotation matrix to text file.
 (5) Projecting samples onto the principal components.
 (6) Saving PCs to text file.
+(7) Saving mean genotypes to text file.
 ```
 
 *Describe here the two files that were created.*

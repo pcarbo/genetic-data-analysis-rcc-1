@@ -1,7 +1,9 @@
-# Load the expert-provided population labels for the 1000 Genome Phase
-# 3 samples from the text file downloaded from the FTP site.
-read.1kg.labels <- function (filename) {
-  out <- read.table(filename,header = TRUE,as.is = FALSE)
-  names(out)[1] <- "id"
-  return(out[c("id","pop")])
+# Subtract x[i] from column X[,i] for each i. This has the
+# interpretation of "centering" the columns of X when y is the vector
+# of column means.
+center.cols <- function (X, y) {
+  n <- length(y)
+  for (i in 1:n)
+    X[,i] = X[,i] - y[i]
+  return(X)
 }
