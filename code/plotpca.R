@@ -17,7 +17,7 @@ plotpca <- function (panel, i = 1, j = 2) {
   panel        <- panel[c("id","pop",paste("PC",c(i,j),sep=""))]
   names(panel) <- c("id","label","x","y")
   return(ggplot(panel,aes(x,y,col = label,shape = label)) +
-         geom_point(cex = 2) +
+         geom_point(cex = 1.5) +
          scale_color_manual(values = clrs) +
          scale_shape_manual(values = shapes) +
          theme_minimal() +

@@ -12,3 +12,6 @@ admixture --seed=1 -j8 1kg_train.bed 7
 ```
 
 Next replace 7 with 11 to compute structure with K=11 populations.
+
+Since this command takes over 2 hours, we have provided the output in
+a local directory (see [Setup](setup.md)).

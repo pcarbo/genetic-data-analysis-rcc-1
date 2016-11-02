@@ -32,7 +32,7 @@ panel <- transform(merge(panel,pc),
 
 # Optionally, create a new graphics device. (Note: this doesn't work
 # in RStudio.)
-dev.new(height = 7.5,width = 9.5)
+dev.new(height = 6,width = 8)
 
 # Plot the samples according to their projection onto PCs 1 and 2; the
 # colour and shape of the samples are chosen according to the
