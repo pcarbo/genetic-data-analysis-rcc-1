@@ -23,7 +23,6 @@ Log on to midway using ssh with X forwarding:
 
 ```bash
 ssh -X username@midway.rcc.uchicago.edu
-
 ```
 
 Request an **interactive session** using the reservation for this
@@ -87,19 +86,22 @@ cp /project/rcc/workshops/genetic-data-analysis-1/results/* .
 ```
 
 Make sure that you can generate and view graphics in R using
-[ggplot2](http://ggplot2.org). 
+[ggplot2](http://ggplot2.org). First, start R,
 
 ```bash
-cd ~/git/genetic-data-analysis-rcc-1/code
+cd ~/git/gda1
 R --no-save
 ```
 
-and then in R enter
+and once you have loaded the R environment, enter:
 
 ```R
-source("demo.ggplot.R")
+source("code/demo.ggplot.R")
 ```
 
-If this is not working on your computer, and alternative (for midway
-cluster only) is [ThinLinc](add-url-here).
+This should create an oscillating arrangement of multicolour dots. If
+this is not working on your computer, and alternative (for the
+*midway* cluster only) is [ThinLinc](http://rcc.uchicago.edu/docs/connecting/index.html#connecting-with-thinlinc).
 
+Once you have successfully completed all these steps, you are ready
+to move on to [Episode 2](02-pca.md).

@@ -5,7 +5,7 @@ November 2, 2016<br>
 **Instructor:** Peter Carbonetto<br>
 **Helpers:** Will Graybeal
 
-Register [here](http://training.uchicago.edu/course_detail.cfm?course_id=171).
+Register [here](http://training.uchicago.edu/course_detail.cfm?course_id=1714).
 
 ## General Information
 
