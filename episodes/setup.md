@@ -59,7 +59,7 @@ have enough storage space in your home directory for these files (use
 the `quota` command to check).*
 
 ```bash
-cd ~/git/genetic-data-analysis-rcc-1/data
+cd ~/git/gda1/data
 cp /project/rcc/workshops/genetic-data-analysis-1/data/* .
 ```
 

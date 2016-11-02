@@ -10,6 +10,7 @@ Materials:
 * Sticky notes in two different colours.
 * Keys for people who do not have midway accounts.
 * HDMI to Mini-Displayport adapter.
+* Digital camera.
 
 Creating the reservation:
 

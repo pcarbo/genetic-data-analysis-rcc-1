@@ -66,6 +66,11 @@ Next, try different ancestral populations (k=2, *etc.*).
  users some opportunity to run admixture.
 
 ```bash
-cd ~/git/
-admixture ...
+cd ~/git/gda1/data
+cp ../results/1kg_train.7.P 1kg_test.7.P.in
+plink --file 1kg_test --make-bed --out 1kg_test
+admixture -P 1kg_test.bed 7
+cut -d " " -f 1 1kg_test.fam | paste - 1kg_test.7.Q > 1kg_test+ids.7.Q
 ```
+
+Next, inspect the results by eye.
