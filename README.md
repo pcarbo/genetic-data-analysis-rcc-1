@@ -1,10 +1,8 @@
 # Analysis of Genetic Data, Part 1
 
-
-November 2, 2016
-2:00 pm - 4:00 pm
-
-**Instructor:** Peter Carbonetto
+November 2, 2016<br>
+2:00 pm - 4:00 pm<br>
+**Instructor:** Peter Carbonetto<br>
 **Helpers:** TBD
 
 Register [here](http://training.uchicago.edu/course_detail.cfm?course_id=171).
