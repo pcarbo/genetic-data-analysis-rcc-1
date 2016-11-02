@@ -1,7 +1,7 @@
 # Background on the 1000 Genomes genotype data
 
 These are the steps I took to prepare the 1000 Genomes data for this
-workshop. If you do not have access to the data on *miway*, you should
+workshop. If you do not have access to the data on *midway*, you should
 be able to regenerate the data set yourself by following these
 steps. (Note the exact steps may be slightly different depending on
 your computing setup.)
@@ -30,7 +30,7 @@ chromosomes 1-22. Also, remove any SNPs in which the proportion of
 missing genotypes is unusually high (>5%), or in which the frequency
 of the minor allele is less than 1%. These steps are taken to simplify
 the analyses of these data, perhaps at the expense of removing some
-genetic data that might expose more subtle patterns.
+genetic markers that might expose more subtle patterns in the data.
 
 ```bash
 module load plink/1.90
@@ -44,7 +44,7 @@ an additional 281,593 SNPs with minor allele frequencies less than
 
 Next, retain genotype data only for the variants in the dbSNP
 reference database (these are SNPs with ids starting with "rs"). This
-step is only taken to make the size of the data set more manageable
+step is mainly taken to make the size of the data set more manageable
 for our statistical analyses.
 
 ```bash
@@ -53,21 +53,21 @@ plink --bfile 1kg --make-bed --extract markers.txt --out 1kg_new
 ```
 
 At this point, we have genotype data for 655,388 SNPs and 2,318
-samples. Many of the SNPs contain somewhat redundant information
-because they are in "linkage disequilibrium" with each other; that is,
-they are strongly correlated with each other due to being close to
-each other on the same chromosome, and therefore it is rare to have a
-recombination event between these two SNPs. In this next step, we
-greedily prune out a large fraction of the SNPs to improve computation
-time for subsequent analyses while retaining as much information as
-possible.
+samples. Many of these >600,000 SNPs still contain somewhat redundant
+information because they are in "linkage disequilibrium" with each
+other; that is, they are correlated due to having experienced
+recombination less frequently since they are close to each other on
+the same chromosome. In this next step, we greedily prune out a large
+portion of the SNPs, again mainly done to improve computation time for
+subsequent analyses, while retaining as much information as possible
+about the patterns of variation in the sample.
 
 ```bash
 plink --bfile 1kg_new --indep-pairwise 1000 500 0.25
 plink --bfile 1kg_new --make-bed --extract plink.prune.in --out 1kg_pruned
 ```
 
-After this pruning step, we are have genotype data for 156,923 SNPs.
+After this pruning step, we are left with genotypes for 156,923 SNPs.
 
 Finally, since closely related samples can have affect our subsequent
 analyses in strange ways, for our computations we remove the 29 out of
