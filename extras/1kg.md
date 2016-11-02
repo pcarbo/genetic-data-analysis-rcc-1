@@ -45,7 +45,7 @@ an additional 281,593 SNPs with minor allele frequencies less than
 Next, retain genotype data only for the variants in the dbSNP
 reference database (these are SNPs with ids starting with "rs"). This
 step is mainly taken to make the size of the data set more manageable
-for our statistical analyses.
+for our statistical analyses. 
 
 ```bash
 grep rs 1kg.bim | grep -v SNP 1kg.bim | cut -f 2 > markers.txt
@@ -74,7 +74,7 @@ the samples are closely related, having closely related samples in the
 data set can sometimes affect the results in unexpected
 ways. Therefore, for our computations we remove the 29 out of the 31
 genotyped samples that are known to be closely related
-(see [this table](ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/20140625_related_individuals.txt)).
+according to [this table](http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/20140625_related_individuals.txt).
 
 ```bash
 tail -n +2 20140625_related_individuals.txt | cut -f 1 > temp.txt
@@ -86,11 +86,11 @@ plink --bfile 1kg_pruned --recode --keep samples.txt --out 1kg_test
 In the end, we have genotype data at 156,923 SNPs on chromosomes 1-22
 for 2,289 samples.
 
-We added the suffix "train" to the data file to indicate that is the
-data set we will use to learn, or "train", the population models. We
-also save the 29 samples in a separate file with suffix "test". These
-29 samples will later be used to test the models we learned by making
-predictions with them. Note that the remaining 29 "test" samples in
-are stored in PLINK's text-based format that has the advantage that it
-is human readable.
-
+We added the suffix "train" to the data file to indicate that this is
+the data set we will use to learn, or "train", the population
+models. We also save the 29 samples in a separate file with suffix
+"test". These 29 samples will later be used to test the models we
+learned by using the models to make predictions from the individual
+genotype samples. Note that the remaining 29 "test" samples are stored
+in PLINK's text-based format. The advantage of the text-based format
+is that it is human readable.
