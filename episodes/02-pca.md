@@ -112,7 +112,7 @@ matlab -nosplash -nodesktop
 
 In MATLAB, run the data conversion script by entering:
 
-```MATLAB
+```matlab
 traw2mat
 ```
 
@@ -122,7 +122,7 @@ MATLAB, we can perform the computation. This is accomplished using the
 MATLAB [geno_pca.m](../code/geno_pca.m) script. Again in MATLAB, simply
 enter:
 
-```MATLAB
+```matlab
 geno_pca
 ```
 
@@ -130,7 +130,7 @@ The key step in this script is the line that uses the
 [svdk algorithm](../code/svdk.m) to compute the largest *k* singular
 values and the associated singular vectors:
 
-```MATLAB
+```matlab
 [U S R] = svdk(X,k);
 ```
 
@@ -148,8 +148,8 @@ Computation took 1.41 minutes.
 (7) Saving mean genotypes to text file.
 </pre>
 
-Note that this algorithm is *very fast*; it only takes a few minutes
-to compute the SVD for the 2289 x 156923 genotype data matrix.
+Note that this algorithm is *extremely fast*; it only takes a few
+minutes to compute the SVD for the 2289 x 156923 genotype data matrix.
 
 This script creates two files in the results folder:
 
