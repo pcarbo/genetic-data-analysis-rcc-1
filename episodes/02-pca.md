@@ -1,6 +1,18 @@
 # Analysis of Genetic Data 1: Exploring structure of genetic data using PCA
 
-*Brief introduction to PCA goes here.*
+This episode is divided into two parts. In the first part, we will
+observe how genetic polymorphism data---specifically genotype samples
+from human subjects---are commonly stored in computer files. We will
+also see how these data can be represented as a **matrix**.
+
+For these explorations, we will use genotype data from Phase 3 of the
+[1000 Genomes Project](http://dx.doi.org/10.1038/nature15393), a
+massive effort to comprehensively study global human genetic variation
+and provide a commmunity resource for genetics research. These data
+have been made available to the public
+[here](http://www.1000genomes.org/data). See [here](../extras/1kg.md)
+for the steps taken to retrieve and prepare the 1000 Genomes data for
+this workshop.
 
 Convert .bed file to .ped file and inspect the .ped file. How can we
 represent this as a matrix?
