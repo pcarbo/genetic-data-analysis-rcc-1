@@ -82,8 +82,8 @@ PCA within this workshop, let alone motivate its importance for
 genetics research. One simple way to view PCA is as a dimensionality
 reduction technique for embedding multi-dimensional data in a small
 number of dimensions (e.g., for plotting samples in 2
-dimensions). Here we will gain some intuition for PCA by illustrating
-its use in genetic data.
+dimensions). Here we will gain some non-mathematical intuition for PCA
+by illustrating its use in genetic data.
 
 Several software tools have been developed for efficiently computing
 principal components (PCs) from large genetic data sets, such as
@@ -97,8 +97,8 @@ called [svdk](../code/svdk.m) to compute the the first *k* singular
 values of the genotype matrix and their associated singular vectors.
 
 *Note:* To proceed from this point you may need more memory than was
-suggested in [Setup](01-setup.md). It seems that requesting 8 GB of
-memory is sufficient for these computations.
+initially suggested in [Setup](01-setup.md). It seems that requesting 8
+GB of memory is sufficient for these computations.
 
 Before computing the SVD in MATLAB, we first convert the
 `1kg_test.traw` to a binary format that is convenient for loading into
@@ -110,7 +110,7 @@ cd ~/git/gda1/code
 matlab -nosplash -nodesktop
 ```
 
-In MATLAB, simply enter:
+In MATLAB, run the data conversion script by entering:
 
 ```MATLAB
 traw2mat
@@ -148,15 +148,20 @@ Computation took 1.41 minutes.
 (7) Saving mean genotypes to text file.
 </pre>
 
-Note that this algorithm is very fast; it only takes a few minutes to
-compute the (reduced) SVD for this large genotype matrix.
+Note that this algorithm is *very fast*; it only takes a few minutes
+to compute the SVD for the 2289 x 156923 genotype data matrix.
 
-*Describe here the two files that were created.*
+This script creates two files in the results folder:
+
+1. `1kg_train_pcs.txt`, a text file storing the mapping of the samples
+onto the first k PCs. 
+
+2. `1kg_train_rot.txt`, the high-dimensional "rotation" matrix which
+we will use to project new genotype samples onto the PCA embedding.
+
+Take a moment to inspect these files using `less -S`.
 
 ### Visualizing PCs using R
-
-Convert .bed file to .ped file and inspect the .ped file. How can we
-represent this as a matrix?
 
 Start up R:
 
