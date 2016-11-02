@@ -156,33 +156,42 @@ This script creates two files in the results folder:
 1. `1kg_train_pcs.txt`, a text file storing the mapping of the samples
 onto the first k PCs. 
 
-2. `1kg_train_rot.txt`, the high-dimensional "rotation" matrix which
-we will use to project new genotype samples onto the PCA embedding.
+2. `1kg_train_rot.txt`, the p x k "rotation" matrix which we will use
+to project new genotype samples onto the PCA embedding in the next
+episode.
 
 Take a moment to inspect these files using `less -S`.
 
-### Visualizing PCs using R
+### Visualizing PCs in R
 
-Start up R:
+After having done all the work to represent the genotype data as a
+matrix, and compute a low-dimensional representation of this matrix
+using PCA (equivalently, SVD), now we will generate PC-based
+visualizations of the data.
+
+First, start up the R environment:
 
 ```bash
-cd ~/git/genetic-data-analysis-rcc-1/code
+cd ~/git/gda1
 R --no-save
 ```
 
 In R, these are the steps to plot PCs 1 and 2:
 
+*Split this code into two sections: (1) loading the data, (2) plotting the
+ PCs. And explain clearly what we are plotting.*
+
 ```R
 # Load the "plotpca" function and other useful functions.
 library(ggplot2)
-source("read.data.R")
-source("plotpca.R")
+source("code/read.data.R")
+source("code/plotpca.R")
 
 # Load the expert-provided population labels.
-panel <- read.1kg.labels("../data/omni_samples.20141118.panel")
+panel <- read.1kg.labels("data/omni_samples.20141118.panel")
 
 # Load the genotype samples projected onto the PCs.
-pc <- read.pcs("../results/1kg_train_pcs.txt")
+pc <- read.pcs("results/1kg_train_pcs.txt")
 
 # Merge the two tables.
 pc <- transform(merge(panel,pc),
