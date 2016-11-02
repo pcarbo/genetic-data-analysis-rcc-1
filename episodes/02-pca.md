@@ -148,8 +148,10 @@ Computation took 1.41 minutes.
 (7) Saving mean genotypes to text file.
 </pre>
 
-*Describe here the two files that were created.*
+Note that this algorithm is very fast; it only takes a few minutes to
+compute the (reduced) SVD for this large genotype matrix.
 
+*Describe here the two files that were created.*
 
 ### Visualizing PCs using R
 
