@@ -52,10 +52,7 @@ the training samples). The rotation matrix is a p x k matrix, where k
 is the number of PCs computed.
 
 A simple matrix multiplication completes the projection of the test
-samples onto the embedding defined by the PCs. The only annoying
-problem is the small number (<1%) of missing genotypes that make the
-matrix multiplication less straightforward. Here we simply set the
-missing entries to zero after centering the columns of the matrix.
+samples onto the embedding defined by the PCs.
 
 ```R
 source("misc.R")
@@ -64,16 +61,30 @@ X[is.na(X)] <- 0
 pc.test     <- X %*% R
 ```
 
-Now we will compare the projection of these test samples against the
-PCs computed for the training samples. *Repeat previous steps from
-[pca.m](../code/pca.m) to load the PCs into the R environment.*
+The only annoying problem was the small number (<1%) of missing
+genotypes that make the matrix multiplication less straightforward.
+Here we simply set the missing entries to zero after centering the
+columns of the matrix. Now we will compare the projection of these
+test samples against the PCs computed for the training samples.
+
+*Now repeat previous steps from [pca.md](pca.md) to load the PCs into
+the R environment.*
+
+Here we create the same plot as before, but here we overlay the plot
+with the test samples (), showing the expert-provided population
+labels. 
 
 ```R
 pc.test           <- cbind(data.frame(id = rownames(pc.test)),pc.test)
 rownames(pc.test) <- NULL
 pc.test           <- transform(merge(panel,pc.test),
                                id = as.character(id))
-print(plotpca(pc,1,2,dat2 = pc.test))
+print(plotpca(pc,1,2,dat.more = pc.test))
 ```
+
+This demonstrates that we can use the PCs to make *predictions* about
+any unseen genotype sample as long as (1) we have genotype data for
+the same set of SNPs as the training samples, and (2) the genotypes
+are encoded in the same way.
 
 As before, try different combinations of PCs.
