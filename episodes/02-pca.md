@@ -239,3 +239,7 @@ structure*, captured by PCs 1 and 2?
 find more surprising?
 
 :pushpin: Investigate these same questions for PCs 3 and 4.
+
+In [the next episode](03-pca-project.md), we will demonstrate the
+power of these same numerical techniques for making predictions from
+genetic data.
