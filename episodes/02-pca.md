@@ -20,8 +20,6 @@ research. These data have been made available to the public
 to retrieve and prepare the 1000 Genomes data for this workshop, see
 [here](../extras/1kg.md).
 
-Meaning of population labels: https://catalog.coriell.org/1/NHGRI/About/Guidelines-for-Referring-to-Populations
-
 ### Storing genetic data in computer files
 
 Let's start by inspecting the file `1kg_test.ped` which you copied to
@@ -206,5 +204,7 @@ dev.new(height = 6,width = 8)
 # expert-provided population labels.
 print(plotpca(pc,1,2))
 ```
+
+Meaning of population labels: https://catalog.coriell.org/1/NHGRI/About/Guidelines-for-Referring-to-Populations
 
 Next, try different combinations of PCs (e.g., `print(plotpca(panel,3,4))`).
