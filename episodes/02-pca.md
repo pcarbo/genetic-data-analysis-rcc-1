@@ -41,7 +41,7 @@ a pair of letters after the first 6 columns specifies the genotype at
 a given SNP (a nucleotide on each chromosome copy). Some genotype
 entries are `0 0`, meaning that the genotype is unavailable.
 
-:pencil: This file is over 18 MB in size just to store the genotypes
+:ledger: This file is over 18 MB in size just to store the genotypes
 for 29 samples. Why is this text format an inefficient way to store
 genotype data? How could you store the data more efficiently?
 
