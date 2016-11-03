@@ -20,7 +20,7 @@ research. These data have been made available to the public
 to retrieve and prepare the 1000 Genomes data for this workshop, see
 [here](../extras/1kg.md).
 
-### Storing genetic data in computer files
+### A. Storing genetic data in computer files
 
 Let's start by inspecting the file `1kg_test.ped` which you copied to
 the data folder. This file contains the genotype data for 29 samples at
@@ -45,7 +45,7 @@ entries are `0 0`, meaning that the genotype is unavailable.
 for 29 samples. Why is this text format an inefficient way to store
 genotype data? How could you store the data more efficiently?
 
-### Representing genetic data as a matrix
+### B. Representing genetic data as a matrix
 
 In order to apply numerical analyses to the genotype data, we need to
 be able to represent these data in a numerical form. Here we will use
@@ -73,7 +73,7 @@ fully numeric representation of the genotype data.
 the genotype? How much more efficient is this representation compared
 to `1kg_test.ped`?
 
-### Computing PCs from genetic data using MATLAB
+### C. Computing PCs from genetic data using MATLAB
 
 PCA is an important numerical technique for data analysis in many
 scientific fields, and it would be inappropriate to attempt to explain
@@ -165,7 +165,7 @@ episode.
 will use for the rest of this episode and the next. Take a moment to
 inspect these files using `less -S`.
 
-### Visualizing PCs in R
+### D. Visualizing PCs in R
 
 After having done all the work to represent the genotype data as a
 matrix, and compute a low-dimensional representation of this matrix

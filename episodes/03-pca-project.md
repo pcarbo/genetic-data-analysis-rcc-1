@@ -5,7 +5,7 @@ computing the "projection" of a new set of genotype samples (a "test
 set") onto the PCs computed previously from a different set samples
 (the "training set").
 
-###Ensuring a consistent encoding for the test genotypes
+### A. Ensuring a consistent encoding for the test genotypes
 
 In order to be able to apply our PCA results to a new set of genotype
 samples, we need to make sure that they are represented, or *encoded*,
@@ -32,7 +32,7 @@ with entries that are 0, 1, 2 or missing (NA), and the 0, 1 and 2s for
 each SNP mean the exact same thing as the 0, 1 and 2s for each SNP in
 the file `1kg_train.traw` which we used to compute the PCs.
 
-### Projection as prediction
+### B. Projection as prediction
 
 Next, we open up R again,
 
