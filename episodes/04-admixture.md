@@ -98,11 +98,20 @@ print(plotadmix(admix,k = 1))
 
 Next, try different ancestral populations (k=2, *etc.*).
 
-*pencil2* Revisit the admnixture results with K=11 populations.
+:pencil2: Revisit the admixture results with K=11 populations.
 
-*If I have time, explain how we can predict admixture proportions in
- unseen samples using the -P option in admixture.* This will give the
- users some opportunity to run admixture.
+### C. Predicting ancestral admixture proportions from genotypes using a global variation reference panel
+
+*Note: This section is a work-in-progress.*
+
+In this exercise, we will use the ADMIXTURE results we generated from
+the 1000 Genomes training set to estimate admixture for new genotype
+samples (the "test set"). Specifically, we will use the previously
+computed allele frequencies stored in the .P file. We will see that
+once the hard work of fitting the ADMIXTURE model has already been
+accomplished, estimating admixture proportions for new samples is very
+fast. This illustrates how we can leverage large genetic data sets to
+quickly estimate admixture proportions for any number of new samples.
 
 ```bash
 cd ~/git/gda1/data
@@ -112,4 +121,8 @@ admixture -P 1kg_test.bed 7
 cut -d " " -f 1 1kg_test.fam | paste - 1kg_test.7.Q > 1kg_test+ids.7.Q
 ```
 
-Next, inspect the results by eye.
+Although the model fitting, as we mentioned previously, is
+computationally intensive, this step should complete in the order of
+several seconds or minutes on your laptop.
+
+*Next, inspect the results by eye, perhaps using R.
