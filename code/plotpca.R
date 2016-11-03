@@ -7,7 +7,8 @@
 #
 # The last input argument, dat.more, is another data frame of the same
 # form as dat. This is useful if you want to overlay the PCA plot with
-# a smaller set of labeled points (set add.labels = TRUE to show labels).
+# a smaller set of labeled points (set add.labels = TRUE to show the
+# labels).
 #
 plotpca <- function (dat, i = 1, j = 2, dat.more = NULL,
                      add.labels = FALSE) {
@@ -50,11 +51,15 @@ plotpca <- function (dat, i = 1, j = 2, dat.more = NULL,
     out <- out + geom_point(aes(x,y),data = dat.more,col = "black",
                             shape = 20,cex = 2.5)
 
-    # If requested, add the labels.
-    if (add.labels)
-      out <- out + geom_text(aes(label = label),col = "black",
+    # Add the labels.
+    if (!add.labels)
+      out <- out + geom_text(aes(label = id),col = "black",
                              data = dat.more,hjust = "left",nudge_x = 3,
-                             size = 3.25)
+                             size = 2.5)
+    else
+      out <- out + geom_text(aes(label = paste(id," (",label,")",sep="")),
+                             col = "black",data = dat.more,hjust = "left",
+                             nudge_x = 3,size = 2.5)
   }
 
   return(out)

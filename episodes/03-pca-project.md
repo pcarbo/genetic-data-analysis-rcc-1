@@ -114,8 +114,11 @@ print(head(pc.test),digits = 4)
 ```R
 library(ggplot2)
 source("code/plotpca.R")
+dev.new(height = 6,width = 8)  # Optional.
 print(plotpca(pc,1,2,dat.more = pc.test))
 ```
+
+:ledger: *Add questions here.* (Assume single-origin individuals.)
 
 This demonstrates that we can use the PCs to make *predictions* about
 any unseen genotype sample as long as (1) we have genotype data for
