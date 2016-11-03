@@ -1,4 +1,4 @@
-# Analysis of Genetic Data 1:<br>Exploring global human diversity using ADMIXTURE
+# Analysis of Genetic Data 1:<br>Exploring structure of genetic data using ADMIXTURE
 
 [ADMIXTURE](https://www.genetics.ucla.edu/software/admixture) is a
 method, like PCA, that is commonly used to discover latent structure
