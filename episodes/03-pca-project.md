@@ -100,8 +100,8 @@ PCs computed for the training samples. To do so, we will re-generate
 plot we created in the [previous episode](02-pca.md), then overlay the
 test samples onto this plot. *First, repeat the steps to load and
 merge the "pc" data frame containing the PCA results.* Once you have
-done this, take the following steps to generate a data frame for the
-test samples.
+done this, take the following steps to generate a data frame `pc.test`
+for the test samples.
 
 ```R
 pc.test           <- cbind(data.frame(id = rownames(pc.test)),pc.test)
@@ -111,6 +111,9 @@ pc.test           <- transform(pc.test,id = as.character(id))
 print(head(pc.test),digits = 4)
 ```
 
+We can now use the `plotpca` command to overlay the test samples onto
+the plot we made before.
+
 ```R
 library(ggplot2)
 source("code/plotpca.R")
@@ -118,8 +121,11 @@ dev.new(height = 6,width = 8)  # Optional.
 print(plotpca(pc,1,2,dat.more = pc.test))
 ```
 
-:ledger: What predictions would you make about the unlabeled test
-samples based on their projection onto 
+:ledger: What predictions would you make about the unlabeled genotype
+samples based on their projection onto PCs 1 and 2? What predictions
+would be most reliable (*i.e.*, most accurate), and what predictions
+might be less reliable or accurate? How does this visualization inform
+us about the reliability or accuracy of the predictions?
 
 :pushpin: Consider using the "zoom" feature of function `plotpca`.
 
