@@ -145,7 +145,7 @@ cases?
 
 :pencil2: Apply these same questions to PCs 3 and 4.
 
-In [Episode 4](04-admixture.md), we will explore a different numerical
-analysis technique that makes very different assumptions about the
-genotypes, and as a result it yields different insights about hidden
-patterns in the data.
+:white_check_mark: In [Episode 4](04-admixture.md), we will explore a
+different numerical analysis technique that makes very different
+assumptions about the genotypes, and as a result it yields different
+insights about hidden patterns in the data.

@@ -103,5 +103,5 @@ This should create an oscillating arrangement of multicolour dots. If
 this is not working on your computer, and alternative (for the
 *midway* cluster only) is [ThinLinc](http://rcc.uchicago.edu/docs/connecting/index.html#connecting-with-thinlinc).
 
-Once you have successfully completed all these steps, you are ready
-to move on to [Episode 2](02-pca.md).
+:white_check_mark: Once you have successfully completed all these
+steps, you are ready to move on to [Episode 2](02-pca.md).

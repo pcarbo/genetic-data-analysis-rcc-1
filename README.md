@@ -3,7 +3,7 @@
 November 2, 2016<br>
 2:00 pm - 4:00 pm<br>
 **Instructor:** Peter Carbonetto<br>
-**Helpers:** Will Graybeal
+**Helper:** Will Graybeal
 
 Register [here](http://training.uchicago.edu/course_detail.cfm?course_id=1714).
 
