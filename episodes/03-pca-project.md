@@ -1,16 +1,22 @@
 # Analysis of Genetic Data 1:<br>Making predictions using PCA
 
-Here we further explore principal components by computing the
-"projection" of a new set of genotype samples (a "test set") onto the
-PCs computed previously using a different set samples (a "training set").
+Here, we further explore fhe potential of PCA for genetic data by
+computing the "projection" of a new set of genotype samples (a "test
+set") onto the PCs computed previously from a different set samples
+(the "training set").
 
-To be able to work with new genotype samples, we need to make sure
-that they are represented, or encoded, in the genotype matrix *in the
-exact same way.* In particular, we need to make sure that a "0"
-genotype in the test samples means the same thing as a "0" genotype in
-the training samples, and the same for "1" and "2" genotypes. We can
-enforce the same encoding this using the `--recode-allele` flag in
-PLINK.
+###Encoding the test genotypes
+
+In order to be able to apply our PCA results to a new set of genotype
+samples, we need to make sure that they are represented, or *encoded*,
+in the genotype matrix *in the exact same way.* *This can be difficult
+to achieve, particularly when the genotype data are obtained using a
+different genotyping technology, or in different experimental
+conditions.* Specifically, we need to make sure that a "0" genotype in
+the training samples means the same thing as a "0" genotype in the
+test samples, and likewise for genotypes "1" and "2". In this example,
+we can enforce the same encoding this using the `--recode-allele`
+option in PLINK:
 
 ```bash
 module load plink/1.90
