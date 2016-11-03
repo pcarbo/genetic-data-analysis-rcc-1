@@ -27,10 +27,10 @@ plink --file 1kg_test --recode A-transpose spacex \
 less -S 1kg_test.traw
 ```
 
-We now have the genotype data stored as a matrix with entries that are
-0, 1, 2 or missing (NA), and the 0, 1 and 2s for each SNP mean the
-exact same thing as the 0, 1 and 2s for each SNP in the file
-`1kg_train.traw` which we used to compute the PCs.
+:white_check_mark: We now have the genotype data stored as a matrix
+with entries that are 0, 1, 2 or missing (NA), and the 0, 1 and 2s for
+each SNP mean the exact same thing as the 0, 1 and 2s for each SNP in
+the file `1kg_train.traw` which we used to compute the PCs.
 
 ### Projection as prediction
 

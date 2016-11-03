@@ -161,7 +161,9 @@ onto the first k PCs.
 to project new genotype samples onto the PCA embedding in the next
 episode.
 
-Take a moment to inspect these files using `less -S`.
+:white_check_mark: You have generated all the PCA result files that we
+will use for the rest of this episode and the next. Take a moment to
+inspect these files using `less -S`.
 
 ### Visualizing PCs in R
 
