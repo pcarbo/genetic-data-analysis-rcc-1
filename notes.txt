@@ -1,6 +1,3 @@
-Notes:
-* Add "exit slip" to Google doc.
-
 Materials:
 * Sticky notes in two different colours.
 * Keys for people who do not have midway accounts.
@@ -8,6 +5,7 @@ Materials:
 * VGA to Mini-Displayport adapter.
 * Digital camera.
 * Print-outs of Markdown files.
+* Water bottle.
 
 Creating the reservation:
 

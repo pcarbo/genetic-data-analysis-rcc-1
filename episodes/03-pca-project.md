@@ -99,7 +99,7 @@ Now we will compare the projection of these test samples against the
 PCs computed for the training samples. To do so, we will re-generate
 plot we created in the [previous episode](02-pca.md), then overlay the
 test samples onto this plot. *First, repeat the steps to load and
-merge the data frame `pc` containing the PCA results.* Once you have
+merge the "pc" data frame containing the PCA results.* Once you have
 done this, take the following steps to generate a data frame for the
 test samples.
 

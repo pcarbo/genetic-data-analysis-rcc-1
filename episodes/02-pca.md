@@ -241,7 +241,12 @@ structure*, captured by PCs 1 and 2?
 :orange_book: Which results match your expectations, and which do you
 find more surprising?
 
-:pushpin: Investigate these same questions for PCs 3 and 4.
+:pushpin: To zoom in on certain portions of the plot, use the `zoom`
+argument to `plotpca` (see the comments at the top of
+[plotpca.R](code/plotpca.R) for details); for example,
+`print(plotpca(pc,1,2,zoom = c(-40,10,10,70)))`.
+
+:pencil2: Investigate these same questions for PCs 3 and 4.
 
 In [the next episode](03-pca-project.md), we will demonstrate the
 power of these same numerical techniques for making predictions from

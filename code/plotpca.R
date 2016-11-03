@@ -5,12 +5,15 @@
 #
 # Inputs i and j specify the PCs to plot.
 #
+# Input zoom allows you to specify a rectangle to show in the plot,
+# zoom = c(x0,x1,y0,y1), for the x (horizontal) and y (vertical) axes.
+#
 # The last input argument, dat.more, is another data frame of the same
 # form as dat. This is useful if you want to overlay the PCA plot with
 # a smaller set of labeled points (set add.labels = TRUE to show the
 # labels).
 #
-plotpca <- function (dat, i = 1, j = 2, dat.more = NULL,
+plotpca <- function (dat, i = 1, j = 2, zoom = NULL,dat.more = NULL,
                      add.labels = FALSE) {
 
   # These vectors specify the colours and shapes used in the plots.
@@ -36,6 +39,13 @@ plotpca <- function (dat, i = 1, j = 2, dat.more = NULL,
                  legend.title     = element_text(face = "italic"),
                  axis.title       = element_text(face = "bold",size = 14)) +
            labs(x = paste("PC",i),y = paste("PC",j))
+
+  # If the plotting rectangle is provided, specify the dimensions of
+  # the plot.
+  if (!is.null(zoom))
+    out <- out +
+           xlim(zoom[1],zoom[2]) +
+           ylim(zoom[3],zoom[4])
 
   # If an additional data frame is provided, plot the points as
   # before, except that they are all plotted with the same shape and
