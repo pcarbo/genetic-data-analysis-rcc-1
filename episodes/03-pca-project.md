@@ -20,16 +20,22 @@ option in PLINK:
 
 ```bash
 module load plink/1.90
+cd ~/git/gda1/data
 cut -f 2,5 1kg_train.bim > alleles.txt
 plink --file 1kg_test --recode A-transpose spacex \
-  --recode-allele alleles.txt --out 1kg_test
+--recode-allele alleles.txt --out 1kg_test
+less -S 1kg_test.traw
 ```
 
 We now have the genotype data stored as a matrix with entries that are
-0, 1, 2 or missing (NA). Next, we open up R again,
+0, 1, 2 or missing (NA), and the 0, 1 and 2s for each SNP mean the
+exact same thing as the 0, 1 and 2s for each SNP in the file
+`1kg_train.traw` which we used to compute the PCs.
+
+Next, we open up R again,
 
 ```bash
-cd ~/git/genetic-data-analysis-rcc-1/code
+cd ~/git/gda1/code
 R --no-save
 ```
 

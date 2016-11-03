@@ -57,16 +57,17 @@ is the number of samples.
 
 ```bash
 module load plink/1.90
+cd ~/git/gda1/data
 plink --file 1kg_test --recode A-transpose spacex --out 1kg_test
-less -S 1kg_test
+less -S 1kg_test.traw
 ```
 
-Each line of the `1kg.traw` text file, after the header line, stores a
-row of the p x n matrix, and each (space-delimited) column of the text
-file, after the first 6 columns, stores a column of the p x n
+Each line of the `1kg_test.traw` text file, after the header line,
+stores a row of the p x n matrix, and each (space-delimited) column of
+the text file, after the first 6 columns, stores a column of the p x n
 matrix. Observe that all the matrix entries are either 0, 1 or 2 (or
-'NA' for "not available", or "missing"). Therefore, we now have a fully
-numeric representation of the genotype data.
+'NA' for "not available", or "missing"). Therefore, we now have a
+fully numeric representation of the genotype data.
 
 :ledger: Why is a single number (0, 1 or 2) sufficient to represent
 the genotype? How much more efficient is this representation compared
@@ -98,13 +99,15 @@ values of the genotype matrix and their associated singular vectors.
 initially suggested in [Setup](01-setup.md). It seems that requesting 8
 GB of memory is sufficient for these computations.
 
-Before computing the SVD in MATLAB, we first convert the
-`1kg_test.traw` to a binary format that is convenient for loading into
-MATLAB.
+Before computing the SVD in MATLAB, we first generate
+`1kg_train.traw`, then convert it to a binary format that is
+convenient for loading into MATLAB.
 
 ```bash
 module load matlab/2016a
-cd ~/git/gda1/code
+cd ~/git/gda1/data
+plink --file 1kg_train --recode A-transpose spacex --out 1kg_train
+cd ../code
 matlab -nosplash -nodesktop
 ```
 
