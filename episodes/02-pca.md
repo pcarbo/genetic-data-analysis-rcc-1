@@ -106,7 +106,7 @@ convenient for loading into MATLAB.
 ```bash
 module load matlab/2016a
 cd ~/git/gda1/data
-plink --file 1kg_train --recode A-transpose spacex --out 1kg_train
+plink --bfile 1kg_train --recode A-transpose spacex --out 1kg_train
 cd ../code
 matlab -nosplash -nodesktop
 ```
