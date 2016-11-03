@@ -85,17 +85,20 @@ In R, these are the steps to show the distribution of admixture
 components for a given ancestral population (in this example, we
 examine population k=1):
 
+```R
 # Optionally, create a new graphics device. Note this doesn't work
 # in RStudio.
 dev.new(height = 4,width = 8)
 
-# TO DO: Add comments here.
+# Generate a box plot showing the distribution of estimated admixture
+# peoportions for population k=1, in which the samples are stratified
+# by the expert-provided population labels.
 print(plotadmix(admix,k = 1))
 ```
 
 Next, try different ancestral populations (k=2, *etc.*).
 
-*Optional:* Revisit the admnixture results with K=7 populations.
+*pencil2* Revisit the admnixture results with K=11 populations.
 
 *If I have time, explain how we can predict admixture proportions in
  unseen samples using the -P option in admixture.* This will give the
