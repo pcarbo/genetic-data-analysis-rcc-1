@@ -106,9 +106,9 @@ proportions?
 proportions for specific groups of samples with the same label suggest
 about the history of these groups?
 
-:orange_book: How would you explain, broadly speaking, the differences
-in the population patterns captured by ADMIXTURE and the patterns
-captured by PCA?
+:orange_book: How would you explain, broadly speaking, some of the of
+the differences you have observed in the population patterns captured
+by ADMIXTURE and the population patterns captured by PCA?
 
 :pencil2: Revisit the admixture results with K=11 populations.
 
