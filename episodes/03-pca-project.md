@@ -118,11 +118,24 @@ dev.new(height = 6,width = 8)  # Optional.
 print(plotpca(pc,1,2,dat.more = pc.test))
 ```
 
-:ledger: *Add questions here.* (Assume single-origin individuals.)
+:ledger: What predictions would you make about the unlabeled test
+samples based on their projection onto 
 
-This demonstrates that we can use the PCs to make *predictions* about
-any unseen genotype sample as long as (1) we have genotype data for
-the same set of SNPs as the training samples, and (2) the genotypes
-are encoded in the same way.
+:pushpin: Consider using the "zoom" feature of function `plotpca`.
 
-As before, try different combinations of PCs.
+:pushpin: To verify your predictions for the test samples, compare
+against the expert-provided population labels by adding the option
+`add.labels = TRUE` to your call to `plotpca`.
+
+:pencil2: This demonstrates that we can use PCA applied to genetic
+data to make *predictions* about any unseen genotype data as long as
+(1) we have genotype data for the same set of SNPs as the training
+samples, and (2) the genotypes are encoded in the same way.  What is
+unrealistic about this "test" of our predictions?
+
+:pencil2: Apply these same questions to PCs 3 and 4.
+
+In [Episode 4](04-admixture.md), we will explore a different numerical
+analysis technique that makes very different assumptions about the
+genotypes, and as a result it yields different insights about hidden
+patterns in the data.
