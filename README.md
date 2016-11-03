@@ -78,4 +78,4 @@ computation.
 
 ## Extras
 
-*Extras go here.*
+[Preparation of the 1000 Genomes genotype data](extras/1kg.md)

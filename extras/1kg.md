@@ -1,4 +1,4 @@
-# Background on the 1000 Genomes genotype data
+# Preparation of the 1000 Genomes genotype data
 
 These are the steps I took to prepare the 1000 Genomes data for this
 workshop. If you do not have access to the data on *midway*, you should
