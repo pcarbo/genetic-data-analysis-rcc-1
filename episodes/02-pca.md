@@ -215,8 +215,8 @@ plot from the PCA results. For example, the following lines will plot
 the samples according to their projection onto PCs 1 and 2.
 
 ```R
-# Optionally, create a new graphics device. (Note: this doesn't work
-# in RStudio.)
+# Optionally, create a new graphics device. Note this doesn't work
+# in RStudio.
 dev.new(height = 6,width = 8)
 
 # Plot the samples according to their projection onto PCs 1 and 2; the
@@ -225,4 +225,17 @@ dev.new(height = 6,width = 8)
 print(plotpca(pc,1,2))
 ```
 
-Next, try different combinations of PCs (e.g., `print(plotpca(panel,3,4))`).
+:blue_book: Compare your plot against Supplementary Figure 4 of the
+[1000 Genomes paper from 2012](http://dx.doi.org/10.1038/nature11632). How
+well do these plots agree?
+
+:ledger: How does this visualization inform us about global genetic
+diversity (or relative lack of genetic diversity) and its relationship
+to geography and/or demographic trends? How would you explain in a
+concise, non-technical way the main demographic trends, or "population
+structure", captured by PCs 1 and 2?
+
+:ledger: Which results match your expectations, and which do you find
+more surprising?
+
+:orange_book : Investigate these same questions for PCs 3 and 4.
