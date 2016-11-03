@@ -86,8 +86,8 @@ by illustrating its use in genetic data.
 Several software tools have been developed for efficiently computing
 principal components (PCs) from large genetic data sets, such as
 [EIGENSOFT](https://www.hsph.harvard.edu/alkes-price/software). Instead
-of using a specialized program, here we use MATLAB to emphasize that
-PCA is easily computed using standard numerical techniques; in
+of using a specialized program, here we use MATLAB to demonstrate that
+PCA is easily computed using well established numerical techniques; in
 particular, PCA is studied as the singular value decomposition (SVD)
 of a matrix, so we will use a
 [fast MATLAB implementation of the Lanczos algorithm developed by Jie Chen at IBM](https://jie-chen-ibm.appspot.com/software.html)
@@ -232,8 +232,8 @@ well do these plots agree?
 :ledger: How does this visualization inform us about global genetic
 diversity (or relative lack of genetic diversity) and its relationship
 to geography and/or demographic trends? How would you explain in a
-concise, non-technical way the main demographic trends, or "population
-structure", captured by PCs 1 and 2?
+concise, non-technical way the main demographic trends, or *population
+structure*, captured by PCs 1 and 2?
 
 :orange_book: Which results match your expectations, and which do you
 find more surprising?
