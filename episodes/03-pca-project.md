@@ -124,10 +124,12 @@ print(plotpca(pc,1,2,dat.more = pc.test))
 :ledger: What predictions would you make about the unlabeled genotype
 samples based on their projection onto PCs 1 and 2? What predictions
 would be most reliable (*i.e.*, most accurate), and what predictions
-might be less reliable or accurate? How does this visualization inform
-us about the reliability or accuracy of the predictions?
+might be less reliable or less accurate? How does the PCA
+visualization inform us about the reliability or accuracy of the
+predictions?
 
-:pushpin: Consider using the "zoom" feature of function `plotpca`.
+:pushpin: In this exercise, consider using the "zoom" feature of
+function `plotpca`.
 
 :pushpin: To verify your predictions for the test samples, compare
 against the expert-provided population labels by adding the option
@@ -136,8 +138,10 @@ against the expert-provided population labels by adding the option
 :pencil2: This demonstrates that we can use PCA applied to genetic
 data to make *predictions* about any unseen genotype data as long as
 (1) we have genotype data for the same set of SNPs as the training
-samples, and (2) the genotypes are encoded in the same way.  What is
-unrealistic about this "test" of our predictions?
+samples, and (2) the genotypes are encoded in the same way. What is
+unrealistic about this "test" of our predictions? In other words, what
+additional implicit assumptions are we making about the unseen test
+cases?
 
 :pencil2: Apply these same questions to PCs 3 and 4.
 
