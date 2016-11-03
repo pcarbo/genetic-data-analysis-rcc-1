@@ -79,34 +79,41 @@ y <- read.mean.genotypes("results/1kg_train_mean.txt")
 The rotation matrix R is a p x k matrix, where k is the number of PCs
 computed.
 
-A simple matrix multiplication completes the projection of the test
-samples onto the embedding defined by the PCs.
+After centering the columns, a simple matrix multiplication completes
+the mapping of the test samples onto the embedding defined by the
+PCs.
 
 ```R
-source("misc.R")
+source("code/misc.R")
 X           <- center.cols(X,y)
 X[is.na(X)] <- 0
 pc.test     <- X %*% R
 ```
 
 The only annoying problem was the small number (<1%) of missing
-genotypes that make the matrix multiplication less straightforward.
-Here we simply set the missing entries to zero after centering the
-columns of the matrix. Now we will compare the projection of these
-test samples against the PCs computed for the training samples.
+genotypes. Here we simply set the missing entries to zero after
+centering the columns of the matrix, which seems reasonable for lack
+of a more sophisticated solution.
 
-*Now repeat previous steps from [pca.md](pca.md) to load the PCs into
-the R environment.*
-
-Here we create the same plot as before, but here we overlay the plot
-with the test samples (), showing the expert-provided population
-labels. 
+Now we will compare the projection of these test samples against the
+PCs computed for the training samples. To do so, we will re-generate
+plot we created in the [previous episode](02-pca.md), then overlay the
+test samples onto this plot. *First, repeat the steps to load and
+merge the data frame `pc` containing the PCA results.* Once you have
+done this, take the following steps to generate a data frame for the
+test samples.
 
 ```R
 pc.test           <- cbind(data.frame(id = rownames(pc.test)),pc.test)
 rownames(pc.test) <- NULL
-pc.test           <- transform(merge(panel,pc.test),
-                               id = as.character(id))
+pc.test           <- merge(panel,pc.test)
+pc.test           <- transform(pc.test,id = as.character(id))
+print(head(pc.test),digits = 4)
+```
+
+```R
+library(ggplot2)
+source("code/plotpca.R")
 print(plotpca(pc,1,2,dat.more = pc.test))
 ```
 
