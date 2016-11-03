@@ -96,7 +96,19 @@ dev.new(height = 4,width = 8)
 print(plotadmix(admix,k = 1))
 ```
 
-Next, try different ancestral populations (k=2, *etc.*).
+Try this with different ancestral populations (k=2, *etc.*).
+
+:ledger: How would you characterize each of the 7 ancestral
+populations based on these visual summaries of the admixture
+proportions?
+
+:ledger: Based on these characterizations, what do the admixture
+proportions for specific groups of samples with the same label suggest
+about the history of these groups?
+
+:orange_book: How would you explain, broadly speaking, the differences
+in the population patterns captured by ADMIXTURE and the patterns
+captured by PCA?
 
 :pencil2: Revisit the admixture results with K=11 populations.
 
@@ -125,4 +137,4 @@ Although the model fitting, as we mentioned previously, is
 computationally intensive, this step should complete in the order of
 several seconds or minutes on your laptop.
 
-*Next, inspect the results by eye, perhaps using R.
+*Next, inspect the results by eye, perhaps using R.*
