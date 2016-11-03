@@ -11,8 +11,8 @@ hidden patterns, or "structure", in genetic data. In these exercises,
 we will discover that much of the structure uncovered by PCA can be
 connected to human history and geography.
 
-For these explorations, we will use genotype data from Phase 3 of the
-[1000 Genomes Project](http://dx.doi.org/10.1038/nature15393), an
+For these explorations, we will use genotype data from [Phase 3 of the
+1000 Genomes Project](http://dx.doi.org/10.1038/nature15393), an
 international scientific effort to comprehensively study global human
 genetic variation and create a commmunity resource for genetics
 research. These data have been made available to the public
@@ -39,11 +39,11 @@ arrow keys on your keyboard.
 A line of this file stores the genotype data for a single sample; each
 a pair of letters after the first 6 columns specifies the genotype at
 a given SNP (a nucleotide on each chromosome copy). Some genotype
-entries are "0 0", meaning that the genotype is unavailable.
+entries are `0 0`, meaning that the genotype is unavailable.
 
-This file is over 18 MB in size just to store the genotypes for 29
-samples. Why is this text format an inefficient way to store genotype
-data? How could you store the data more efficiently?
+:pencil: This file is over 18 MB in size just to store the genotypes
+for 29 samples. Why is this text format an inefficient way to store
+genotype data? How could you store the data more efficiently?
 
 ### Representing genetic data as a matrix
 
