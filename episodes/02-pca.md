@@ -61,16 +61,16 @@ plink --file 1kg_test --recode A-transpose spacex --out 1kg_test
 less -S 1kg_test
 ```
 
-Each line of the `1kg.traw' text file, after the header line, stores a
+Each line of the `1kg.traw` text file, after the header line, stores a
 row of the p x n matrix, and each (space-delimited) column of the text
 file, after the first 6 columns, stores a column of the p x n
 matrix. Observe that all the matrix entries are either 0, 1 or 2 (or
-'NA' for "not available", or missing). Therefore, we now have a fully
+'NA' for "not available", or "missing"). Therefore, we now have a fully
 numeric representation of the genotype data.
 
-Why is a single number (0, 1 or 2) sufficient to represent the
-genotype? How much more efficient is this representation compared to
-`1kg_test.ped`?
+:ledger: Why is a single number (0, 1 or 2) sufficient to represent
+the genotype? How much more efficient is this representation compared
+to `1kg_test.ped`?
 
 ### Computing PCs from genetic data using MATLAB
 
@@ -110,7 +110,7 @@ matlab -nosplash -nodesktop
 
 In MATLAB, run the data conversion script by entering:
 
-```matlab
+```MATLAB
 traw2mat
 ```
 
@@ -120,7 +120,7 @@ MATLAB, we can perform the computation. This is accomplished using the
 MATLAB [geno_pca.m](../code/geno_pca.m) script. Again in MATLAB, simply
 enter:
 
-```matlab
+```MATLAB
 geno_pca
 ```
 
@@ -128,7 +128,7 @@ The key step in this script is the line that uses the
 [svdk algorithm](../code/svdk.m) to compute the largest *k* singular
 values and the associated singular vectors:
 
-```matlab
+```MATLAB
 [U S R] = svdk(X,k);
 ```
 
@@ -164,8 +164,8 @@ Take a moment to inspect these files using `less -S`.
 
 After having done all the work to represent the genotype data as a
 matrix, and compute a low-dimensional representation of this matrix
-using PCA (equivalently, SVD), now we will generate PC-based
-visualizations of the data.
+using PCA (equivalently, SVD), in this section we will generate
+PC-based visualizations of the data.
 
 First, start up the R environment:
 
@@ -174,10 +174,9 @@ cd ~/git/gda1
 R --no-save
 ```
 
-In R, these are the steps to plot PCs 1 and 2:
+In this next code block, we load the PCA results into R.
 
-*Split this code into two sections: (1) loading the data, (2) plotting the
- PCs. And explain clearly what we are plotting.*
+In R, these are the steps to plot PCs 1 and 2:
 
 ```R
 # Load the "plotpca" function and other useful functions.
@@ -185,26 +184,45 @@ library(ggplot2)
 source("code/read.data.R")
 source("code/plotpca.R")
 
-# Load the expert-provided population labels.
+# Load the expert-provided population labels as a data frame.
 panel <- read.1kg.labels("data/omni_samples.20141118.panel")
+print(head(panel))
 
-# Load the genotype samples projected onto the PCs.
+# Load the genotype samples projected onto the PCs. This is a data
+# frame in which the first column gives the sample ids, and the
+# remaining columns give the projection of the samples onto the
+# computed PCs.
 pc <- read.pcs("results/1kg_train_pcs.txt")
+print(head(pc),digits = 4)
 
-# Merge the two tables.
-pc <- transform(merge(panel,pc),
-                id = as.character(id))
+# Merge the two tables; we now have an additional column giving the
+# population label.
+pc <- merge(panel,pc)
+pc <- transform(pc,id = as.character(id))
+print(head(pc),digits = 4)
+```
 
+After completing these steps, in our R environment we now have a data
+frame `pc` containing the PCA results and the population labels for
+all the genotype samples in the 1000 Genomes data set. Entering
+`print(summary(pc$pop))` summarizes the population label counts.  For
+the meaning of these population labels, refer to
+[these guidelines](http://catalog.coriell.org/1/NHGRI/About/Guidelines-for-Referring-to-Populations).
+
+We have designed an R function `plotpca` (see
+[plotpca.R](code/plotpca.R) for the source code) that generates a 2-d
+plot from the PCA results. For example, the following lines will plot
+the samples according to their projection onto PCs 1 and 2.
+
+```R
 # Optionally, create a new graphics device. (Note: this doesn't work
 # in RStudio.)
 dev.new(height = 6,width = 8)
 
 # Plot the samples according to their projection onto PCs 1 and 2; the
 # colour and shape of the samples are chosen according to the
-# expert-provided population labels.
+# expert-provided population labels provided in the "pop" column.
 print(plotpca(pc,1,2))
 ```
-
-Meaning of population labels: https://catalog.coriell.org/1/NHGRI/About/Guidelines-for-Referring-to-Populations
 
 Next, try different combinations of PCs (e.g., `print(plotpca(panel,3,4))`).
