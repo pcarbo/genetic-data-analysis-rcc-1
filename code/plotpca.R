@@ -1,6 +1,6 @@
 # This function generates a PCA plot.
 #
-# The first input argumnet, dat, must be a data frame with a "label"
+# The first input argumnet, dat, must be a data frame with a "pop"
 # column containing a factor, and columns "PC1", "PC2", etc.
 #
 # Inputs i and j specify the PCs to plot.
@@ -27,7 +27,7 @@ plotpca <- function (dat, i = 1, j = 2, zoom = NULL,dat.more = NULL,
   dat        <- dat[c("id","pop",paste("PC",c(i,j),sep=""))]
   names(dat) <- c("id","label","x","y")
 
-  # Create the ggplot object.
+  # Create a scatterplot using ggplot.
   out <- ggplot(dat,aes(x,y,col = label,shape = label)) +
            geom_point(cex = 1.5) +
            scale_color_manual(values = clrs) +

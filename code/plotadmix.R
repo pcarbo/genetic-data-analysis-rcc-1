@@ -1,14 +1,25 @@
-# TO DO: Explain here what this function does.
+# This function generates an ADMIXTURE plot.
+#
+# The first input argumnet, dat, must be a data frame with a "pop"
+# column containing a factor, and columns K1", "K2", etc. containing
+# the estimated admixture proportions.
+#
+# Input k specifies the ancestral population to plot.
+#
 plotadmix <- function (dat, k = 1) {
 
-  # TO DO: Add comments here.
+  # Select the columns of the data frame that we will use to generate 
+  # the plot.
   dat        <- dat[c("id","pop",paste("K",k,sep=""))]
   names(dat) <- c("id","label","y")
-  mean.y     <- with(dat,tapply(y,label,mean))
-  dat <- transform(dat,label = factor(as.character(label),
-                                      names(sort(mean.y,decreasing = TRUE))))
+
+  # Sort the labels by the mean estimated proportion for the selected
+  # ancestral population.
+  mean.y <- with(dat,tapply(y,label,mean))
+  dat    <- transform(dat,label = factor(as.character(label),
+              names(sort(mean.y,decreasing = TRUE))))
   
-  # TO DO: Add comments here.
+  # Create a box plot using ggplot.
   out <- ggplot(dat,aes(label,y)) +
          geom_boxplot() +
          theme_minimal() +

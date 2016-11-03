@@ -181,8 +181,6 @@ R --no-save
 
 In this next code block, we load the PCA results into R.
 
-In R, these are the steps to plot PCs 1 and 2:
-
 ```R
 # Load the "plotpca" function and other useful functions.
 library(ggplot2)
