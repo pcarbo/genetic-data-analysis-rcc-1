@@ -235,7 +235,7 @@ to geography and/or demographic trends? How would you explain in a
 concise, non-technical way the main demographic trends, or "population
 structure", captured by PCs 1 and 2?
 
-:ledger: Which results match your expectations, and which do you find
-more surprising?
+:orange_book: Which results match your expectations, and which do you
+find more surprising?
 
-:orange_book : Investigate these same questions for PCs 3 and 4.
+:pushpin: Investigate these same questions for PCs 3 and 4.
