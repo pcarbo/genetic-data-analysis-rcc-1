@@ -72,7 +72,7 @@ computation.
 | Episode | Concepts |
 | --- | --- |
 | 1. [Setup](episodes/01-setup.md) | How do I set up my shell environment on *midway* for an analysis of genetic data? |
-| 2. [Principal component analysis of genetic data](episodes/02-pca.md) | How do I encode genetic polymorphism data?<br>How do I represent genetic polymorphism data as a matrix?<br>How can I visualie the results of PCA to gain insight into structure of genetic data? |
+| 2. [Principal component analysis of genetic data](episodes/02-pca.md) | How do I encode genetic polymorphism data?<br>How do I represent genetic polymorphism data as a matrix?<br>How can I visualize the results of PCA to gain insight into structure of genetic data? |
 | 3. [Making predictions using PCA](episodes/03-pca-project.md) | How do I ensure a consistent encoding of the genotype data?<br>How do I map another genetic data set onto an existing PCA result?<br>What does this mapping tell us (and not tell us) about a sample's ancestral origins? |
 | 4. [ADMIXTURE analysis of genetic data](episodes/04-admixture.md) | How do I visualize and interpret the results of running ADMIXTURE on genetic data?<br>How do I use the ADMIXTURE results to make predictions for new samples? |
 
